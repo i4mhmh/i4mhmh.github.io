@@ -6,7 +6,7 @@
   <link href="http://www.i4mhmh.cn/atom.xml" rel="self"/>
   
   <link href="http://www.i4mhmh.cn/"/>
-  <updated>2022-04-11T15:24:35.802Z</updated>
+  <updated>2022-04-12T14:55:09.925Z</updated>
   <id>http://www.i4mhmh.cn/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python</title>
+    <link href="http://www.i4mhmh.cn/2022/04/12/Python/"/>
+    <id>http://www.i4mhmh.cn/2022/04/12/Python/</id>
+    <published>2022-04-12T11:31:38.000Z</published>
+    <updated>2022-04-12T14:55:09.925Z</updated>
+    
+    <content type="html"><![CDATA[<p>​        最近发现自己在Python理论方面有很大的不足,具体体现为东西我会做,但是一旦问到概念性的东西,我就很难回答的完整,甚至于是自己都没有见过、用过一些基础的技术, 今天意识到这个问题:地基打不牢,面试地动山摇,因此决定特开一篇学习历程.md,以解决遇到一些基础的问题都答不上来这个情况.会记录一些见过或者没见过,自己觉得简单或者较难的概念问题.</p><span id="more"></span>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;​        最近发现自己在Python理论方面有很大的不足,具体体现为东西我会做,但是一旦问到概念性的东西,我就很难回答的完整,甚至于是自己都没有见过、用过一些基础的技术, 今天意识到这个问题:地基打不牢,面试地动山摇,因此决定特开一篇学习历程.md,以解决遇到一些基础的问题都答不上来这个情况.会记录一些见过或者没见过,自己觉得简单或者较难的概念问题.&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Python" scheme="http://www.i4mhmh.cn/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>技术感悟</title>
+    <link href="http://www.i4mhmh.cn/2022/04/12/%E6%8A%80%E6%9C%AF%E6%84%9F%E6%82%9F-1/"/>
+    <id>http://www.i4mhmh.cn/2022/04/12/%E6%8A%80%E6%9C%AF%E6%84%9F%E6%82%9F-1/</id>
+    <published>2022-04-12T11:29:07.000Z</published>
+    <updated>2022-04-12T11:30:12.914Z</updated>
+    
+    
+    
+    
+    
+    <category term="技术感悟" scheme="http://www.i4mhmh.cn/tags/%E6%8A%80%E6%9C%AF%E6%84%9F%E6%82%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>java_learning_record</title>
