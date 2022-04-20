@@ -169,7 +169,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>150 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>447 字</span>
         </span>
     
     
@@ -190,9 +190,27 @@
         
 
         <div class="article-content markdown-body">
-            <p>​        最近发现自己在Python理论方面有很大的不足,具体体现为东西我会做,但是一旦问到概念性的东西,我就很难回答的完整,甚至于是自己都没有见过、用过一些基础的技术, 今天意识到这个问题:地基打不牢,面试地动山摇,因此决定特开一篇学习历程.md,以解决遇到一些基础的问题都答不上来这个情况.会记录一些见过或者没见过,自己觉得简单或者较难的概念问题.</p>
+            <p>最近发现自己在Python理论方面有很大的不足,具体体现为东西我会做,但是一旦问到概念性的东西,我就很难回答的完整,甚至于是自己都没有见过、用过一些基础的技术, 今天意识到这个问题:地基打不牢,面试地动山摇,因此决定特开一篇学习历程.md,以解决遇到一些基础的问题都答不上来这个情况.会记录一些见过或者没见过,自己觉得简单或者较难的概念问题.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello world&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
 <span id="more"></span>
 
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 按步长输出字符</span></span><br><span class="line">str_a = <span class="string">&quot;abcdefg&quot;</span></span><br><span class="line"><span class="built_in">print</span>(str_a[::<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(str_a[::<span class="number">2</span>])</span><br><span class="line">aceg</span><br><span class="line"></span><br><span class="line"><span class="comment"># python3 中bool是int的子类,也就是说True=1, False=0</span></span><br><span class="line">实际操作起来就是<span class="literal">True</span>+<span class="number">1</span>=<span class="number">2</span></span><br><span class="line"></span><br><span class="line">一个/ 除法获得浮点数</span><br><span class="line">两个 // 除法获得整数</span><br></pre></td></tr></table></figure>
+
+<h4 id="列表-List"><a href="#列表-List" class="headerlink" title="列表 List []"></a>列表 List []</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">+是列表的连接运算符 *是重复操作符</span><br><span class="line">表现为</span><br><span class="line">listA + listB = listAlistB</span><br><span class="line">listA * <span class="number">2</span> = listAlistA</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="元组-tuple"><a href="#元组-tuple" class="headerlink" title="元组 tuple()"></a>元组 tuple()</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 元组与列表相似 但元组内容不可改变 且元组是用()表示的 元组内元素可以用索引</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="集合set"><a href="#集合set" class="headerlink" title="集合set{}"></a>集合set{}</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基本功能是进行成员关系测试?和删除重复元素。</span></span><br><span class="line"><span class="comment"># 使用方法</span></span><br><span class="line">	<span class="built_in">set</span>() 或者 &#123;&#125;</span><br><span class="line">	剩下的基本与<span class="built_in">list</span>一样 但是可以用&amp;来判断两集合中相同的元素 /来判断不同时存在的元素</span><br></pre></td></tr></table></figure>
+
+<h4 id="字典-Dictionary"><a href="#字典-Dictionary" class="headerlink" title="字典 Dictionary {}"></a>字典 Dictionary {}</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">字典是一种映射类型,字典中的元素由键来存取,而不是通过下标索引,键必须唯一</span><br><span class="line"><span class="comment"># 定义一个字典</span></span><br><span class="line"><span class="built_in">dict</span> = &#123;&#125;</span><br><span class="line"><span class="comment"># 传入键值</span></span><br><span class="line"><span class="built_in">dict</span>[<span class="string">&#x27;key&#x27;</span>] = <span class="string">&#x27;value&#x27;</span></span><br><span class="line"><span class="comment"># 输出所有key</span></span><br><span class="line"><span class="built_in">dict</span>.keys()</span><br><span class="line"><span class="built_in">dict</span>.values()</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="import"><a href="#import" class="headerlink" title="import"></a>import</h4><p>直接import 导入的东西叫模块</p>
+<p>from xxx import AAA 导入的AAA叫做函数</p>
 
         </div>
 
@@ -227,6 +245,21 @@
 
         
             <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/04/16/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">密码学学习记录</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next">
@@ -361,7 +394,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E8%A1%A8-List"><span class="nav-text">列表 List []</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%83%E7%BB%84-tuple"><span class="nav-text">元组 tuple()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9B%86%E5%90%88set"><span class="nav-text">集合set{}</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E5%85%B8-Dictionary"><span class="nav-text">字典 Dictionary {}</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#import"><span class="nav-text">import</span></a></li></ol>
     </div>
 </div>
         </aside>

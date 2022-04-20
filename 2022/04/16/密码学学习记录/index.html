@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="🍜🍜🍜">
+    <meta name="author" content="i4mhmh">
+    
+    <title>
+        
+            密码学学习记录 |
+        
+        全世界的面我都吃一遍
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/tm.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"www.i4mhmh.cn","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"rgb(0, 102, 204)","avatar":"/images/tm.jpeg","favicon":"/images/tm.png","article_img_align":"left","left_side_width":"260px","content_max_width":"1100px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="全世界的面我都吃一遍" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                全世界的面我都吃一遍
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">密码学学习记录</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/tm.jpeg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">i4mhmh</span>
+                        
+                            <span class="author-label">Bug编写小能手</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-04-16 22:11:34</span>
+        <span class="mobile">2022-04-16 22:11</span>
+    </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.4k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>5 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>从昨天知道自己导师的研究方向是密码学后,一开始是挺迷茫的,大学的时候一直在接触Web跟Misc方向,对Crypto根本没有深入学习过,CTF做过的密码学的题都是直接在网上凯撒、栅栏解密那种签到题,唯一在大一的时候做过与SM4相关的算法,已经全忘完了,所以现在要重新记录一下学习的过程,以方便每次学习后加深自己的理解以及之后的复盘.</p>
+<span id="more"></span>
+
+<h3 id="密码学基本概念"><a href="#密码学基本概念" class="headerlink" title="密码学基本概念"></a>密码学基本概念</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">密码学含有两大分支: 密码编码学、密码分析学</span><br><span class="line"></span><br><span class="line">名词: 明文(plaintext) 密文(ciphertext) 发送者(sender) 接收者(receiver) 加密(encryption) 解密(decryption) 密钥(key)</span><br><span class="line"></span><br><span class="line">根据密钥类型分为两类密码:</span><br><span class="line"></span><br><span class="line"><span class="bullet"> 1.</span> 对称密码</span><br><span class="line"></span><br><span class="line"><span class="code">    Key1 = Key2 又称私钥密码</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="bullet"> 2.</span> 非对称密码</span><br><span class="line"></span><br><span class="line"><span class="code">    Key1 不等于 Key2 又称公钥密码</span></span><br><span class="line"><span class="code"></span></span><br><span class="line">根据加密算法分为两类密码</span><br><span class="line"></span><br><span class="line"><span class="bullet">1.</span> 流密码</span><br><span class="line"></span><br><span class="line"><span class="bullet">2.</span> 分组密码</span><br><span class="line"></span><br><span class="line">   一般指的是对称密码、私钥密码</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">攻击的类型:</span><br><span class="line"></span><br><span class="line"><span class="bullet">1.</span> 被动攻击</span><br><span class="line"></span><br><span class="line">   监听,截获密文后分析</span><br><span class="line"></span><br><span class="line"><span class="bullet">2.</span> 主动攻击</span><br><span class="line"></span><br><span class="line">   串扰系统、删除、更改、重放、伪造</span><br><span class="line"></span><br><span class="line">根据攻击者具备的条件划分的攻击</span><br><span class="line"></span><br><span class="line"><span class="bullet">1.</span> 唯密文攻击</span><br><span class="line"></span><br><span class="line">​	攻击者只有密文,通过猜测密钥来破解</span><br><span class="line"></span><br><span class="line"><span class="bullet">2.</span> 已知明文攻击</span><br><span class="line"></span><br><span class="line">​	攻击者有</span><br><span class="line"></span><br><span class="line"><span class="bullet">3.</span> 选择明文攻击</span><br><span class="line"></span><br><span class="line"><span class="bullet">1.</span> 选择密文攻击</span><br></pre></td></tr></table></figure>
+
+<h3 id="密码学发展史"><a href="#密码学发展史" class="headerlink" title="密码学发展史"></a>密码学发展史</h3><blockquote>
+<p>三个阶段</p>
+</blockquote>
+<h4 id="1-古典密码"><a href="#1-古典密码" class="headerlink" title="1. 古典密码"></a>1. 古典密码</h4><blockquote>
+<p>古代 - 19世纪末之前</p>
+</blockquote>
+<p>此种密码加密方式通常为: 字谜 破解方式全靠猜, 经典密码体制: Caesar凯撒密码、Polybius密码、多表替代密码、维吉尼亚密码.</p>
+<h5 id="凯撒"><a href="#凯撒" class="headerlink" title="凯撒"></a>凯撒</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">恺撒加密、恺撒变换、变换加密</span><br><span class="line"></span><br><span class="line">凯撒密码的替换方法是通过排列明文和密文字母表，密文字母表示通过将明文字母表向左或向右移动一个固定数目的位置。密钥即是位移的位数.</span><br><span class="line"></span><br><span class="line">三位数</span><br><span class="line">明文字母表：ABCDEFGHIJKLMNOPQRSTUVWXYZ</span><br><span class="line">密文字母表：DEFGHIJKLMNOPQRSTUVWXYZABC</span><br><span class="line"></span><br><span class="line">加密算法:</span><br><span class="line"><span class="code">	En(x) = (x+n) mod 26</span></span><br><span class="line"><span class="code">解密算法:</span></span><br><span class="line"><span class="code">	Dn(x) = (x-n) mod 26</span></span><br><span class="line"><span class="code"></span></span><br><span class="line">特定凯撒密码名称:</span><br><span class="line">偏移量为10：Avocat(A→K)</span><br><span class="line">偏移量为13：ROT13</span><br><span class="line">偏移量为-5：Cassis (K 6)</span><br><span class="line">偏移量为-6：Cassette (K 7)</span><br><span class="line"></span><br><span class="line">破解方式 - </span><br><span class="line"></span><br><span class="line">暴力破解</span><br><span class="line"><span class="code">	由于加密机制的问题,导致只会有26种可能,从而可以使暴力破解变得具有可行性.</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code">频率分析</span></span><br><span class="line"><span class="code">当密文长度足够大的情况下，可以先分析密文中每个字母出现的频率，然后将这一频率与正常情况下的该语言字母表中所有字</span></span><br><span class="line"><span class="code">母的出现频率做比较。例如在英语中，正常明文中字母E和T出现的频率特别高，而字母Q和Z出现的频率特别低，而在法语中出</span></span><br><span class="line"><span class="code">现频率最高的字母是E，最低的是K和W。可以通过这一特点，分析密文字母出现的频率，可以估计出正确的偏移量。此外，有时</span></span><br><span class="line"><span class="code">还可以将频率分析从字母推广到单词，例如英语中，出现频率最高的单词是：the, of, and, a, to, in...。我们可以通</span></span><br><span class="line"><span class="code">过将最常见的单词的所有可能的25组密文，编组成字典，进行分析。比如QEB可能是the，MPQY可能是单词know（当然也可能</span></span><br><span class="line"><span class="code">是aden）。但是频率分析也有其局限性，它对于较短或故意省略元音字母或者其他缩写方式写成的明文加密出来的密文进行解</span></span><br><span class="line"><span class="code">密并不适用。</span></span><br></pre></td></tr></table></figure>
+
+<p>加解密算法实现(python)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> curses <span class="keyword">import</span> KEY_HELP</span><br><span class="line"><span class="keyword">from</span> curses.<span class="built_in">ascii</span> <span class="keyword">import</span> islower, isupper</span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">en_model</span>(<span class="params">key, cipher_text</span>):</span><br><span class="line">    encodeStr = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> cipher_text:</span><br><span class="line">        <span class="keyword">if</span> isupper(i):</span><br><span class="line">            plaintext = <span class="built_in">chr</span>(<span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>) + ((<span class="built_in">ord</span>(i) - <span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>)) + key) % <span class="number">26</span> ) <span class="comment"># 把移位后的ascii加一下</span></span><br><span class="line">            encodeStr = encodeStr + plaintext</span><br><span class="line">        <span class="keyword">elif</span> islower(i):</span><br><span class="line">            plaintext = <span class="built_in">chr</span>(<span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>) + ((<span class="built_in">ord</span>(i) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)) + key) % <span class="number">26</span> ) <span class="comment"># 把移位后的ascii加一下</span></span><br><span class="line">            encodeStr = encodeStr + plaintext</span><br><span class="line">        <span class="keyword">elif</span> <span class="string">u&#x27;\u4e00&#x27;</span> &lt;= i &lt;= <span class="string">u&#x27;\u9fff&#x27;</span>:</span><br><span class="line">            plaintext = <span class="built_in">chr</span>(<span class="built_in">ord</span>(i) + key) <span class="comment"># 把移位后的ascii加一下</span></span><br><span class="line">            encodeStr = encodeStr + plaintext</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            encodeStr = encodeStr + i</span><br><span class="line">    <span class="built_in">print</span>(encodeStr)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">de_model</span>(<span class="params">key, cipher_text</span>):</span><br><span class="line">    <span class="comment"># cipher_text = lower() 如果有大小写不需要转换的情况 删去</span></span><br><span class="line">    decodeStr = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> cipher_text:</span><br><span class="line">        <span class="keyword">if</span> isupper(i):</span><br><span class="line">            plaintext = <span class="built_in">chr</span>(<span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>) + ((<span class="built_in">ord</span>(i) - <span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>)) - key) % <span class="number">26</span> ) <span class="comment"># 把移位后的ascii加一下</span></span><br><span class="line">            decodeStr = decodeStr + plaintext</span><br><span class="line">        <span class="keyword">elif</span> islower(i):</span><br><span class="line">            plaintext = <span class="built_in">chr</span>(<span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>) + ((<span class="built_in">ord</span>(i) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)) - key) % <span class="number">26</span> ) <span class="comment"># 把移位后的ascii加一下</span></span><br><span class="line">            decodeStr = decodeStr + plaintext</span><br><span class="line">        <span class="keyword">elif</span> <span class="string">u&#x27;\u4e00&#x27;</span> &lt;= i &lt;= <span class="string">u&#x27;\u9fff&#x27;</span>:</span><br><span class="line">            plaintext = <span class="built_in">chr</span>(<span class="built_in">ord</span>(i)  - key) <span class="comment"># 把移位后的ascii加一下</span></span><br><span class="line">            decodeStr = decodeStr + plaintext</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            decodeStr = decodeStr + i</span><br><span class="line">    <span class="built_in">print</span>(decodeStr)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    description = <span class="string">&#x27;这是一个关于凯撒加解密的小demo -e [text] / -d [text] -k [your key]&#x27;</span></span><br><span class="line">    enhelp = <span class="string">&#x27;-e encode with your text&#x27;</span></span><br><span class="line">    dehelp = <span class="string">&#x27;-d decode with your text&#x27;</span></span><br><span class="line">    key_help = <span class="string">&#x27;-k input your key&#x27;</span></span><br><span class="line">    parser = argparse.ArgumentParser(description=description)</span><br><span class="line">    parser.add_argument(<span class="string">&#x27;-e&#x27;</span>, <span class="built_in">help</span>=enhelp)</span><br><span class="line">    parser.add_argument(<span class="string">&#x27;-d&#x27;</span>, <span class="built_in">help</span>=dehelp)</span><br><span class="line">    parser.add_argument(<span class="string">&#x27;-k&#x27;</span>, <span class="built_in">help</span>=key_help)</span><br><span class="line">    args = parser.parse_args()</span><br><span class="line">    encode_text = args.e</span><br><span class="line">    decode_text = args.d</span><br><span class="line">    key = <span class="built_in">int</span>(args.k)</span><br><span class="line">    <span class="keyword">if</span> encode_text:</span><br><span class="line">        en_model(key, encode_text)</span><br><span class="line">    <span class="keyword">if</span> decode_text:</span><br><span class="line">        de_model(key, decode_text)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<h5 id="维吉尼亚密码"><a href="#维吉尼亚密码" class="headerlink" title="维吉尼亚密码"></a>维吉尼亚密码</h5><p>思路:<br>    由一串明文跟不大于明文的密钥组成,按明文与密钥依次加密,当密钥长度小于明文时,补齐密钥直至等于明文长度,例如:</p>
+<blockquote>
+<p> 明文: abcdefg 密钥abc. 此时,加解密时密钥将会变成abcabca.</p>
+</blockquote>
+<p>加密算法实现(python)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-近代密码"><a href="#2-近代密码" class="headerlink" title="2. 近代密码"></a>2. 近代密码</h4><h4 id="3-现代密码"><a href="#3-现代密码" class="headerlink" title="3. 现代密码"></a>3. 现代密码</h4>
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：密码学学习记录</li>
+        <li>本文作者：i4mhmh</li>
+        <li>创建时间：2022-04-16 22:11:34</li>
+        <li>
+            本文链接：i4mhmh.cn/2022/04/16/密码学学习记录/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/04/12/Python/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Python</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">i4mhmh</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">密码学基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E5%8F%91%E5%B1%95%E5%8F%B2"><span class="nav-text">密码学发展史</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81"><span class="nav-text">1. 古典密码</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%87%AF%E6%92%92"><span class="nav-text">凯撒</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81"><span class="nav-text">维吉尼亚密码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E8%BF%91%E4%BB%A3%E5%AF%86%E7%A0%81"><span class="nav-text">2. 近代密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81"><span class="nav-text">3. 现代密码</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
