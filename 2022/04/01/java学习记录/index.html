@@ -169,12 +169,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>223 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.9k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>7 分钟</span>
         </span>
     
     
@@ -192,10 +192,132 @@
         <div class="article-content markdown-body">
             <h4 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    注释符</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">hello_world</span> &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>Vscode 的插件对于Java的语法辅助并不是很友好,且Java写起来不像python较短,建议用IDEA</p>
 <span id="more"></span>
 
 <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>今天是2022年4月5日, 最近接了一个线上的项目, 是一个线上的宠物超市收银系统, 技术选型的话,在大学时开发用的PHP的Laravel, 毕业了公司里开发用的Python的Django, 但是作为一个学网络安全的, 居然没有入门过Java, 每次要审计Java的代码的时候都是一脸懵, 这次确定花点时间去把Java过一下, 不能因为单纯的不喜欢一门语言就放弃了, 特别是对于网络安全方面的人员, 如果这一门语言你都没接触过, 何谈去审计.</p>
 <h3 id=""><a href="#" class="headerlink" title="!!!"></a>!!!</h3><p>客户买了别人的成品……, 复试还没结束本来要半个月做成半成品都没完成,我吐啦!!!!!!!!!!!!!</p>
+<h3 id="重新拾起"><a href="#重新拾起" class="headerlink" title="重新拾起"></a>重新拾起</h3><hr>
+<p>导师最近说让做一个数据收集的跨平台项目,首选肯定Java没跑了,今天赶紧准备准备刷刷课看一下资料,这两天争取拿下SpringBoot,不能给组内大佬拖后腿了:)</p>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p><strong>JDK、JRE、JVM</strong></p>
+<hr>
+<p><img src="/../img/fd039245d688d43f1cc518a5de35071c0ef43b28.jpeg" alt="img"></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">jdk 是父模块</span><br><span class="line">jre: 搭起来服务</span><br><span class="line">JVM: 模拟一个环境,虚拟机,运行JAVA</span><br></pre></td></tr></table></figure>
+
+<h4 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Hello_world</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        System.out.print(<span class="string">&quot;hello world!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">类名 Hello_world 首字母要大写规范</span><br></pre></td></tr></table></figure>
+
+<h4 id="Java程序运行机制"><a href="#Java程序运行机制" class="headerlink" title="Java程序运行机制"></a>Java程序运行机制</h4><hr>
+<p>编译型与解释型</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">边解释,边执行 ---》 解释型 灵活</span><br><span class="line">直接一次编译成 ---》 编译型	更快</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">java 源文件-》 Java编译器 -》 字节码 <span class="emphasis">*.class文件 -》 类装载器 -》 字节码校验器 -〉 解释器 -》 操作平台</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis"></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Java语法"><a href="#Java语法" class="headerlink" title="Java语法"></a>Java语法</h3><h4 id="注释、标识符、关键字"><a href="#注释、标识符、关键字" class="headerlink" title="注释、标识符、关键字"></a>注释、标识符、关键字</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> 单行注释</span><br><span class="line"><span class="code">		// xxxx要注释的字符串</span></span><br><span class="line"><span class="code">- 多行注释</span></span><br><span class="line"><span class="code">		/*     要注释的东西 	 多行 */</span></span><br><span class="line"><span class="code">		/**</span></span><br><span class="line"><span class="code">		*</span></span><br><span class="line"><span class="code">		*			写的东西会被识别,自动提供补全</span></span><br><span class="line"><span class="code">		*</span></span><br><span class="line"><span class="code">		*/</span></span><br><span class="line"><span class="code">		</span></span><br><span class="line"><span class="code">- 标识符</span></span><br><span class="line"><span class="code">		所有标识符都应该以字母A-Z或者a-z,$,_开始</span></span><br><span class="line"><span class="code">		首字母之后可以是任何字符但特殊符号#之类的不行</span></span><br><span class="line"><span class="code">		不可以取已经定义好的默认方法名</span></span><br><span class="line"><span class="code">		大小写敏感</span></span><br><span class="line"><span class="code">		可以用中文命名(与python一样)</span></span><br><span class="line"><span class="code">		</span></span><br><span class="line"><span class="code">		</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><hr>
+<p><strong>强类型语言</strong></p>
+<p>​    要求变量的使用要严格符合规定,所有变量都必须要先定以后才能使用</p>
+<p><strong>弱类型语言</strong></p>
+<p>​    不严格</p>
+<h5 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h5> <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> 整数类型</span><br><span class="line"><span class="code">		byte:1字节 -128~127</span></span><br><span class="line"><span class="code">		short:2字节 -32768~32767</span></span><br><span class="line"><span class="code">		int: 4字节	-2147483648 ~ 2147673647</span></span><br><span class="line"><span class="code">		long: 8字节</span></span><br><span class="line"><span class="code">- 浮点类型</span></span><br><span class="line"><span class="code">		float: 四字节</span></span><br><span class="line"><span class="code">		double: 八字节</span></span><br><span class="line"><span class="code">- 布尔类型</span></span><br><span class="line"><span class="code">		1位 true false首字母小写</span></span><br><span class="line"><span class="code">char 单独占两个字节</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="section"># long num = 30L 后边要加L加以区分</span></span><br><span class="line"><span class="section"># float num1 = 30.1F 后边要加F与double区分</span></span><br><span class="line"><span class="section"># char name = &#x27;A&#x27; 只能跟一个字符</span></span><br><span class="line">只有当用String时,才能加不限制的字符串</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="数据类型扩展"><a href="#数据类型扩展" class="headerlink" title="数据类型扩展"></a>数据类型扩展</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">float</span> 一般都会有舍入误差, </span><br><span class="line">	最好不要用浮点数进行比较	最好不要用浮点数进行比较	最好不要用浮点数进行比较</span><br><span class="line"></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<h5 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h5><p>强制转换只能由高到低进行转换</p>
+<p>byte 、short 、char - int - long - float - double</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- 强制转换   (转换类型) i</span><br><span class="line">  <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">128</span>;</span><br><span class="line">	<span class="type">byte</span> <span class="variable">b</span> <span class="operator">=</span> (<span class="type">byte</span>) i <span class="comment">// 内存溢出 强制转换了现在已经 ,但是会溢出</span></span><br><span class="line">    </span><br><span class="line">- 自动转换</span><br><span class="line">  由低到高自动填充</span><br><span class="line">        <span class="type">byte</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">22</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> b;</span><br><span class="line">        System.out.println(a);</span><br></pre></td></tr></table></figure>
+
+<p><strong>操作的时候一定需要注意溢出的问题</strong></p>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><blockquote>
+<p>思考</p>
+<p>​        变量是什么?</p>
+</blockquote>
+<ul>
+<li>变量就是可以变化的量</li>
+<li>Java是一种强类型语言, 每个变量都必须声明类型</li>
+<li>Java变量是程序中最基本的存储单元,七要素包括变量名,变量类型,作用域(值)</li>
+<li>分号结尾</li>
+</ul>
+<h5 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a><strong>变量的作用域</strong></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo3</span> &#123;    <span class="comment">//类</span></span><br><span class="line">    <span class="keyword">static</span> <span class="type">String</span> <span class="variable">salary</span> <span class="operator">=</span> <span class="string">&quot;2500&quot;</span>;</span><br><span class="line">    <span class="comment">// 不加static 的话只是当前类的变量,其他需要调用时new</span></span><br><span class="line">    String name;</span><br><span class="line">    <span class="type">int</span> age; <span class="comment">//不赋值则默认为0 (数值类型 0.0之类)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// main方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123; </span><br><span class="line">        <span class="comment">// int i = 10;</span></span><br><span class="line">        System.out.println(salary);</span><br><span class="line"></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p><strong>final 设定常量 还是大写表示</strong></p>
+<h5 id="变量命名规范"><a href="#变量命名规范" class="headerlink" title="变量命名规范"></a>变量命名规范</h5><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">类中成员变量、 局部变量: 首字母小写驼峰 myName</span><br><span class="line">常量: 大写下划线</span><br><span class="line">类名: 首字母大写加驼峰</span><br><span class="line">方法名: 首字母小写驼峰</span><br></pre></td></tr></table></figure>
+
+<h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><ul>
+<li><p>条件运算符</p>
+<p>​    ? a:b</p>
+</li>
+<li><p>支持 ++ –</p>
+</li>
+<li><p>&amp;&amp; ||  需要两个 跟python不一样 两边跟bool类型进行对比</p>
+</li>
+</ul>
+<h4 id="包机制"><a href="#包机制" class="headerlink" title="包机制"></a>包机制</h4><p>本质:解决重复命名的问题,类似于在同一个文件夹A中,有A.txt与A.txt两个文件,名字冲突了,就可以在A文件夹中新建两个文件夹B与C,将txt文件分别置于两个文件夹中.</p>
+<p><strong>规范</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">一般利用公司域名倒置作为包名</span><br><span class="line">i4mhmh.cn  -&gt; cn/i4mhmh</span><br></pre></td></tr></table></figure>
+
+<p>Package 必须放在首行来声明文件位置</p>
+<p>import 不能导入自己的包,且导入的包名与自己当前写的不要重复</p>
+<h4 id="java-Doc"><a href="#java-Doc" class="headerlink" title="java Doc"></a>java Doc</h4><pre><code>* javadoc命令是用来生成自己API文档的
+</code></pre>
+<h4 id="Java流程控制"><a href="#Java流程控制" class="headerlink" title="Java流程控制"></a>Java流程控制</h4><ol>
+<li>用户交互Scanner</li>
+<li>顺序结构</li>
+<li>选择结构</li>
+<li>循环结构</li>
+<li>break&amp;continue</li>
+<li>练习</li>
+</ol>
+<h4 id="Scanner对象"><a href="#Scanner对象" class="headerlink" title="Scanner对象"></a>Scanner对象</h4><ul>
+<li>基本语法:</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Scanner</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(system.in)</span><br></pre></td></tr></table></figure>
+
+<p>通过Scanner类的next()与nextLine()方法获取输入的字符串,在读取一串字符串输入之前用hasNext()与hasNextLine()判断是否还有输入的数据.</p>
+<p>当输入完毕时,用s.close()关闭</p>
+<p>next()与nextLine()的区别在于一个是以空白为停止符,一个是以回车为停止符</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><hr>
+<p>System.out.println() </p>
+<blockquote>
+<p>System 是类    out是对象    println是方法</p>
+</blockquote>
+<p>java方法是语句的集合,命名采用首字母小写,后续驼峰法, 方法包含于类或对象中,方法在程序中被创建,在其他地方被调用,<strong>一个方法只完成一个功能,保证原子性.</strong></p>
+<h4 id="定义方法的格式"><a href="#定义方法的格式" class="headerlink" title="定义方法的格式"></a>定义方法的格式</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">修饰符 返回值类型 方法名(参数类型 参数名)&#123;</span><br><span class="line"><span class="code">	方法体;</span></span><br><span class="line"><span class="code">	return 返回值;</span></span><br><span class="line"><span class="code">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修饰符(可选)告诉编译器如何调用该方法</li>
+<li>返回值类型: 方法可能会返回值,int char之类的 ,但如果不返回就用void</li>
+<li>实参与形参 : 实参 - 实际调用时传递的参数     形参: 定义的时候初始化的参数</li>
+<li>若要返回参数 一定要return</li>
+<li>static证明要直接调用方法</li>
+<li>Java方法都是值传递</li>
+</ul>
+<h4 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h4><p>方法名相同,但传递的参数形式不同,这样可以共存在一个类中,Golang中不能重载.</p>
+<h4 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h4><p>方法的参数用…例如 public xxx (int … i) 相当于传进了一个i数组</p>
+<h4 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h4><p>递归头: 调用的时候需要有一个条件</p>
+<p>递归体: 什么时候调用自己</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p> <strong>数组是相同类型数据的有序集合, 数组描述的是相同类型的若干个数据,按照一定的先后次序排列组合而成</strong></p>
+<h4 id="定义方法"><a href="#定义方法" class="headerlink" title="定义方法"></a>定义方法</h4><p>变量类型[] 数组名称</p>
+<p> 例:</p>
+<p>​    声明数组</p>
+<p>​    <strong>int[] nums &#x3D; new int[10]</strong></p>
+<p>​    <strong>int[] nums</strong></p>
+<p>​    创建数组</p>
+<p>​    <strong>nums &#x3D; new int[10]</strong></p>
+<p>Array.length 获取数组长度</p>
+<p>静态初始化:</p>
+<p>​    int[] nums &#x3D; {1,2,3,4,5}</p>
+<h4 id="数组的四个基本特点"><a href="#数组的四个基本特点" class="headerlink" title="数组的四个基本特点"></a>数组的四个基本特点</h4><ol>
+<li>长度是确定的,数组一旦被创建,大小不可以改变</li>
+<li>元素必须是相同类型</li>
+<li>数组中的元素可以是任何蕾数据类型</li>
+<li>数组变量属于引用类型,数组可以看成是对象</li>
+</ol>
+<p><strong>数组边界</strong></p>
+<p>注意不能越界,便利一般用fori</p>
+<h4 id="数组的使用"><a href="#数组的使用" class="headerlink" title="数组的使用"></a>数组的使用</h4><p>foreach    &#x2F;&#x2F; JDK1.5以上</p>
+<h4 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[][] arrays = &#123;&#123;<span class="number">1</span>,<span class="number">2</span>&#125;,&#123;<span class="number">2</span>,<span class="number">3</span>&#125;,&#123;<span class="number">3</span>,<span class="number">4</span>&#125;&#125;;</span><br><span class="line">System.out.println(arrays[<span class="number">0</span>][<span class="number">1</span>]);</span><br></pre></td></tr></table></figure>
+
 
         </div>
 
@@ -364,7 +486,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#hello-world"><span class="nav-text">hello world</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">!!!</span></a>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#hello-world"><span class="nav-text">hello world</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">!!!</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E6%8B%BE%E8%B5%B7"><span class="nav-text">重新拾起</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hello-World"><span class="nav-text">Hello World</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="nav-text">Java程序运行机制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E8%AF%AD%E6%B3%95"><span class="nav-text">Java语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A%E3%80%81%E6%A0%87%E8%AF%86%E7%AC%A6%E3%80%81%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-text">注释、标识符、关键字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="nav-text">基本类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%89%A9%E5%B1%95"><span class="nav-text">数据类型扩展</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-text">类型转换</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text">变量的作用域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="nav-text">变量命名规范</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%85%E6%9C%BA%E5%88%B6"><span class="nav-text">包机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java-Doc"><span class="nav-text">java Doc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="nav-text">Java流程控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Scanner%E5%AF%B9%E8%B1%A1"><span class="nav-text">Scanner对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E6%96%B9%E6%B3%95%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="nav-text">定义方法的格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E8%BD%BD"><span class="nav-text">重载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0"><span class="nav-text">可变参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%92%E5%BD%92"><span class="nav-text">递归</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E6%96%B9%E6%B3%95"><span class="nav-text">定义方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%9B%9B%E4%B8%AA%E5%9F%BA%E6%9C%AC%E7%89%B9%E7%82%B9"><span class="nav-text">数组的四个基本特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">数组的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-text">二维数组</span></a></li></ol>
     </div>
 </div>
         </aside>
