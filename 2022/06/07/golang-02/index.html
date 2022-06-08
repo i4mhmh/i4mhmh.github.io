@@ -16,13 +16,13 @@
   <meta name="author" content="i4mhmh">
   <meta name="keywords" content="">
   
-    <meta name="description" content="标识符与关键字标识符 具有特殊意义的词,变量名、常量名、函数名等,Go中的标识符有字母数字以及_下划线组成,并且只能以_和字母开头,编程规定格式需要遵守不以下划线开头命名标识符 关键字 暂且不表 变量变量的来历  在程序运行过程中的各个数据都是有不同的内存地址来保存,如果需要对其进行操作的时候,我们以内存地址形式来调用,将会很麻烦,所以给内存地址定义一个变量名,方便调用. 变量声明 同一个作用域(">
+    <meta name="description" content="基本数据类型整型按长度划分为: int8、int16、int32、int64    类型 描述    uint8 8位无符号 0-255   uint16 16位无符号 0-65535   uint32 32位无符号 0-4294967295   int8 -128 ~ 127   int16 -32768~32767   int32    32位机器上int是int32,64的是int64 八进">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>golang-变量与常量 - 全世界的面我都吃一遍</title>
+  <title>golang-基本数据类型 - 全世界的面我都吃一遍</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -174,7 +174,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="golang-变量与常量"></span>
+            <span id="subtitle" data-typed-text="golang-基本数据类型"></span>
           
         </div>
 
@@ -190,8 +190,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-07 16:50" pubdate>
-          2022年6月7日 下午
+        <time datetime="2022-06-07 21:15" pubdate>
+          2022年6月7日 晚上
         </time>
       </span>
     
@@ -259,47 +259,45 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">golang-变量与常量</h1>
+            <h1 style="display: none">golang-基本数据类型</h1>
             
             <div class="markdown-body">
               
-              <h3 id="标识符与关键字"><a href="#标识符与关键字" class="headerlink" title="标识符与关键字"></a>标识符与关键字</h3><p><strong>标识符</strong></p>
-<p>具有特殊意义的词,变量名、常量名、函数名等,Go中的标识符有字母数字以及<code>_</code>下划线组成,并且只能以<code>_</code>和字母开头,<strong>编程规定格式需要遵守不以下划线开头命名标识符</strong></p>
-<p><strong>关键字</strong></p>
-<p>暂且不表</p>
-<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p><strong>变量的来历</strong></p>
-<hr>
-<p>在程序运行过程中的各个数据都是有不同的内存地址来保存,如果需要对其进行操作的时候,我们以内存地址形式来调用,将会很麻烦,所以给内存地址定义一个变量名,方便调用.</p>
-<h4 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a><strong>变量声明</strong></h4><blockquote>
-<p>同一个作用域(函数,方法)只能声明不重复的变量名</p>
-</blockquote>
-<h5 id="标准声明"><a href="#标准声明" class="headerlink" title="标准声明"></a>标准声明</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name <span class="type">string</span></span><br><span class="line"><span class="keyword">var</span> age <span class="type">int</span></span><br><span class="line"><span class="keyword">var</span> isOk <span class="type">bool</span></span><br><span class="line">fmt.Println(name, age, isOk)</span><br></pre></td></tr></table></figure>
-
-<h5 id="批量声明"><a href="#批量声明" class="headerlink" title="批量声明"></a>批量声明</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	a <span class="type">string</span></span><br><span class="line">	b <span class="type">int</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h5 id="类型推导声明"><a href="#类型推导声明" class="headerlink" title="类型推导声明*"></a>类型推导声明*</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name1 <span class="type">string</span> = <span class="string">&quot;Wink&quot;</span></span><br><span class="line"><span class="keyword">var</span> age <span class="type">int</span> = <span class="number">18</span></span><br><span class="line"><span class="keyword">var</span> name2, age = <span class="string">&quot;wink2&quot;</span>, <span class="number">19</span></span><br><span class="line"><span class="keyword">var</span> sex = <span class="string">&quot;男&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="短变量声明"><a href="#短变量声明" class="headerlink" title="短变量声明*"></a>短变量声明*</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 只能在函数内部声明</span></span><br><span class="line">name3 := <span class="string">&quot;i4mhmh&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="匿名变量"><a href="#匿名变量" class="headerlink" title="匿名变量*"></a>匿名变量*</h5><p>在使用多重赋值时,需要忽略某个值,可以使用匿名变量的方法,用一个<code>_</code>来表示</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匿名变量不占用命名空间,不分配内存,不存在重复声明	</span></span><br><span class="line"></span><br><span class="line">x, _ := <span class="number">1</span>, <span class="number">2</span>   <span class="comment">// 实际不可能这么写,只是作为演示</span></span><br><span class="line">fmt.Println(x)</span><br></pre></td></tr></table></figure>
-
-<p><strong>函数外部的定义都需要以关键字来声明</strong></p>
-<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><blockquote>
-<p>常量在程序运行期间不改变,用关键字<code>const</code>来定义,在定义的时候必须赋值</p>
-</blockquote>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pi = <span class="number">3.1415</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在定义常来那个的时候不需要再最后打印</span></span><br></pre></td></tr></table></figure>
-
-<p>声明了<code>pi    </code>在之后的过程中这个值都不能修改</p>
-<h4 id="批量声明-1"><a href="#批量声明-1" class="headerlink" title="批量声明"></a>批量声明</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> (</span><br><span class="line">	a1 = <span class="number">1</span></span><br><span class="line">	b1 = <span class="number">2</span></span><br><span class="line">	c1 = <span class="number">3</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h4 id="同时声明"><a href="#同时声明" class="headerlink" title="同时声明"></a>同时声明</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">const</span> (</span><br><span class="line">		a2 = <span class="number">444</span></span><br><span class="line">		a3</span><br><span class="line">		a4</span><br><span class="line">	)</span><br><span class="line">	fmt.Println(a2, a3, a4)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出444 444 444</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="iota"><a href="#iota" class="headerlink" title="iota"></a>iota</h4><p>常量中的计数器,只能用在常量的表达式中</p>
-<p><code>iota</code>在const关键字出现时重置为0,每新增<strong>一行</strong>常量将使iota+1, 在枚举的时候经常使用</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> (</span><br><span class="line">	n1 = <span class="literal">iota</span> <span class="comment">// 0</span></span><br><span class="line">	n2 = <span class="number">3</span>    <span class="comment">// 1</span></span><br><span class="line">	n3 = <span class="literal">iota</span> <span class="comment">// 2</span></span><br><span class="line">	n4 = <span class="literal">iota</span> <span class="comment">// 3</span></span><br><span class="line">  _  			  <span class="comment">// 4</span></span><br><span class="line">  n5 = <span class="literal">iota</span> <span class="comment">// 5</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(n1, n2, n3, n4)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// 输出 0 3 2 3 5</span></span><br></pre></td></tr></table></figure>
+              <h1 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h1><h2 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h2><p>按长度划分为: int8、int16、int32、int64</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>uint8</td>
+<td>8位无符号 0-255</td>
+</tr>
+<tr>
+<td>uint16</td>
+<td>16位无符号 0-65535</td>
+</tr>
+<tr>
+<td>uint32</td>
+<td>32位无符号 0-4294967295</td>
+</tr>
+<tr>
+<td>int8</td>
+<td>-128 ~ 127</td>
+</tr>
+<tr>
+<td>int16</td>
+<td>-32768~32767</td>
+</tr>
+<tr>
+<td>int32</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>32位机器上int是int32,64的是int64</p>
+<h4 id="八进制-十六进制"><a href="#八进制-十六进制" class="headerlink" title="八进制 - 十六进制"></a>八进制 - 十六进制</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">a := <span class="number">10</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;a = %d&quot;</span>, a)</span><br><span class="line">fmt.Printf(<span class="string">&quot;a = %b&quot;</span>, a)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 八进制 以0开头	</span></span><br><span class="line"></span><br><span class="line">b := <span class="number">071</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;b = %d&quot;</span>, b)</span><br><span class="line">fmt.Printf(<span class="string">&quot;b = %o&quot;</span>, b)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 十六进制 以0x开头</span></span><br><span class="line"></span><br><span class="line">c := <span class="number">0xff</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;c = %d&quot;</span>, c)</span><br><span class="line">fmt.Printf(<span class="string">&quot;c = %o&quot;</span>, c)</span><br><span class="line">fmt.Printf(<span class="string">&quot;c = %x&quot;</span>, c)</span><br><span class="line">fmt.Printf(<span class="string">&quot;c = %X&quot;</span>, c)</span><br><span class="line"></span><br><span class="line"> a = <span class="number">10</span> a = <span class="number">1010</span></span><br><span class="line"> b = <span class="number">57</span> b = <span class="number">71</span></span><br><span class="line"> c = <span class="number">255</span> c = <span class="number">377</span> c = ff c = FF</span><br></pre></td></tr></table></figure>
 
 
               
@@ -324,8 +322,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>golang-变量与常量</div>
-      <div>http://www.i4mhmh.cn/2022/06/07/golang-01/</div>
+      <div>golang-基本数据类型</div>
+      <div>http://www.i4mhmh.cn/2022/06/07/golang-02/</div>
     </div>
     <div class="license-meta">
       
@@ -367,18 +365,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/06/07/golang-02/" title="golang-基本数据类型">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">golang-基本数据类型</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/18/docker%E5%85%A5%E9%97%A8%E5%AE%9E%E6%88%98/" title="docker入门实战">
-                        <span class="hidden-mobile">docker入门实战</span>
+                      <a href="/2022/06/07/golang-01/" title="golang-变量与常量">
+                        <span class="hidden-mobile">golang-变量与常量</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
