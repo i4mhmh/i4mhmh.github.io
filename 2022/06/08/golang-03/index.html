@@ -13,16 +13,16 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="wink">
+  <meta name="author" content="wink-shelby">
   <meta name="keywords" content="">
   
-    <meta name="description" content="基本数据类型整型按长度划分为: int8、int16、int32、int64    类型 描述    uint8 8位无符号 0-255   uint16 16位无符号 0-65535   uint32 32位无符号 0-4294967295   int8 -128 ~ 127   int16 -32768~32767   int32    32位机器上int是int32,64的是int64 八进">
+    <meta name="description" content="运算符算术运算符   符号 作用    + 相加   -    *    % 取余   &amp;#x2F; 除   关系运算符   符号 作用    &amp;#x3D;&amp;#x3D; 判断是否相等   &amp;gt;    &amp;lt;    &amp;gt;&amp;#x3D;    &amp;lt;&amp;#x3D;    !&amp;#x3D;    逻辑运算符   符号 作用    &amp;amp;&amp;amp; and   || or   ! not   位">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>golang-基本数据类型 - 全世界的面我都吃一遍</title>
+  <title>Go语言运算符 - 全世界的面我都吃一遍</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -174,7 +174,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="golang-基本数据类型"></span>
+            <span id="subtitle" data-typed-text="Go语言运算符"></span>
           
         </div>
 
@@ -184,14 +184,14 @@
     
       <span class="post-meta mr-2">
         <i class="iconfont icon-author" aria-hidden="true"></i>
-        wink
+        wink-shelby
       </span>
     
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-07 21:15" pubdate>
-          2022年6月7日 晚上
+        <time datetime="2022-06-08 17:16" pubdate>
+          2022年6月8日 下午
         </time>
       </span>
     
@@ -202,7 +202,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          400 字
         
       </span>
     
@@ -213,7 +213,7 @@
         
         
         
-          17 分钟
+          4 分钟
         
       </span>
     
@@ -259,96 +259,142 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">golang-基本数据类型</h1>
+            <h1 style="display: none">Go语言运算符</h1>
             
             <div class="markdown-body">
               
-              <h1 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h1><h2 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h2><p>按长度划分为: int8、int16、int32、int64</p>
-<table>
+              <h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><table>
 <thead>
 <tr>
-<th>类型</th>
-<th>描述</th>
+<th>符号</th>
+<th>作用</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>uint8</td>
-<td>8位无符号 0-255</td>
+<td>+</td>
+<td>相加</td>
 </tr>
 <tr>
-<td>uint16</td>
-<td>16位无符号 0-65535</td>
+<td>-</td>
+<td></td>
 </tr>
 <tr>
-<td>uint32</td>
-<td>32位无符号 0-4294967295</td>
+<td>*</td>
+<td></td>
 </tr>
 <tr>
-<td>int8</td>
-<td>-128 ~ 127</td>
+<td>%</td>
+<td>取余</td>
 </tr>
 <tr>
-<td>int16</td>
-<td>-32768~32767</td>
+<td>&#x2F;</td>
+<td>除</td>
+</tr>
+</tbody></table>
+<h2 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x3D;&#x3D;</td>
+<td>判断是否相等</td>
 </tr>
 <tr>
-<td>int32</td>
+<td>&gt;</td>
+<td></td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td></td>
+</tr>
+<tr>
+<td>&gt;&#x3D;</td>
+<td></td>
+</tr>
+<tr>
+<td>&lt;&#x3D;</td>
+<td></td>
+</tr>
+<tr>
+<td>!&#x3D;</td>
 <td></td>
 </tr>
 </tbody></table>
-<p>32位机器上int是int32,64的是int64</p>
-<h4 id="八进制-十六进制"><a href="#八进制-十六进制" class="headerlink" title="八进制 - 十六进制"></a>八进制 - 十六进制</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs go">a := <span class="hljs-number">10</span><br>fmt.Printf(<span class="hljs-string">&quot;a = %d&quot;</span>, a)<br>fmt.Printf(<span class="hljs-string">&quot;a = %b&quot;</span>, a)<br><br><span class="hljs-comment">// 八进制 以0开头	</span><br><br>b := <span class="hljs-number">071</span><br>fmt.Printf(<span class="hljs-string">&quot;b = %d&quot;</span>, b)<br>fmt.Printf(<span class="hljs-string">&quot;b = %o&quot;</span>, b)<br><br><span class="hljs-comment">// 十六进制 以0x开头</span><br><br>c := <span class="hljs-number">0xff</span><br>fmt.Printf(<span class="hljs-string">&quot;c = %d&quot;</span>, c)<br>fmt.Printf(<span class="hljs-string">&quot;c = %o&quot;</span>, c)<br>fmt.Printf(<span class="hljs-string">&quot;c = %x&quot;</span>, c)<br>fmt.Printf(<span class="hljs-string">&quot;c = %X&quot;</span>, c)<br><br> a = <span class="hljs-number">10</span> a = <span class="hljs-number">1010</span><br> b = <span class="hljs-number">57</span> b = <span class="hljs-number">71</span><br> c = <span class="hljs-number">255</span> c = <span class="hljs-number">377</span> c = ff c = FF<br></code></pre></td></tr></table></figure>
-
-<h2 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h2><p>Go语言有<code>float32</code>、<code>float64</code>两种浮点类型,32范围3.4e38,64范围1.8e308,打印时用%f</p>
-<h3 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">// complex64和complex32,有实部和虚部之分 暂且不深入学习<br></code></pre></td></tr></table></figure>
-
-<h2 id="布尔型"><a href="#布尔型" class="headerlink" title="布尔型"></a>布尔型</h2><p>只有<code>true</code>与<code>false</code>两种类型,默认为<strong>false</strong></p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">var</span> boo <span class="hljs-type">bool</span><br>boo = <span class="hljs-literal">false</span><br>fmt.Println(boo)<br></code></pre></td></tr></table></figure>
-
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>Go中字符串以<code>utf-8</code>来编码,以<code>&quot;&quot;</code>来包括内容</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs go">s1 := <span class="hljs-string">&quot;Hello World&quot;</span><br>s2 := <span class="hljs-string">&quot;gopher&quot;</span><br>fmt.Println(s1, s2)<br></code></pre></td></tr></table></figure>
-
-<h3 id="字符串转义符"><a href="#字符串转义符" class="headerlink" title="字符串转义符"></a>字符串转义符</h3><table>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><table>
 <thead>
 <tr>
-<th>转义符</th>
-<th>含义</th>
+<th>符号</th>
+<th>作用</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>\r</td>
-<td>回车</td>
+<td>&amp;&amp;</td>
+<td>and</td>
 </tr>
 <tr>
-<td>\n</td>
-<td>换行</td>
+<td>||</td>
+<td>or</td>
 </tr>
 <tr>
-<td>\t</td>
-<td>tab</td>
-</tr>
-<tr>
-<td>\‘</td>
-<td>单引号</td>
-</tr>
-<tr>
-<td>\“</td>
-<td>双引号</td>
-</tr>
-<tr>
-<td>\ \</td>
-<td>反斜杠</td>
+<td>!</td>
+<td>not</td>
 </tr>
 </tbody></table>
-<h3 id="多行字符串"><a href="#多行字符串" class="headerlink" title="多行字符串"></a>多行字符串</h3><p>Go中定义多行字符串,必须使用反引号&#96;</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs go">	str1 := <span class="hljs-string">`</span><br><span class="hljs-string">			1111</span><br><span class="hljs-string">2222</span><br><span class="hljs-string">3333</span><br><span class="hljs-string">444</span><br><span class="hljs-string">  `</span><br>	fmt.Print(str1)  <span class="hljs-comment">// 原样输出相当于python的&#x27;&#x27;&#x27;xxx&#x27;&#x27;&#x27;</span><br></code></pre></td></tr></table></figure>
+<h3 id="位运算符-二进制相比"><a href="#位运算符-二进制相比" class="headerlink" title="位运算符(二进制相比)"></a>位运算符(二进制相比)</h3><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;</td>
+<td>参与运算的两数各位相与</td>
+</tr>
+<tr>
+<td>|</td>
+<td>相或</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>左移</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>右移</td>
+</tr>
+<tr>
+<td>^</td>
+<td>相同为0,不同为1</td>
+</tr>
+</tbody></table>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs go">a := <span class="hljs-number">1</span> <span class="hljs-comment">// 01</span><br>b := <span class="hljs-number">2</span> <span class="hljs-comment">// 10</span><br><br>fmt.Println(a &amp; b)  <span class="hljs-comment">// 0</span><br>fmt.Println(a | b)  <span class="hljs-comment">// 11</span><br>fmt.Println(a ^ b)  <span class="hljs-comment">// 11</span><br>fmt.Println(a &lt;&lt; <span class="hljs-number">2</span>) <span class="hljs-comment">// 100</span><br>fmt.Println(a &gt;&gt; <span class="hljs-number">2</span>) <span class="hljs-comment">// 0 已没了</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="字符串常用操作"><a href="#字符串常用操作" class="headerlink" title="字符串常用操作*"></a>字符串常用操作*</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs go"><br><span class="hljs-comment">// 求长度</span><br>string1 := <span class="hljs-string">&quot;Hello world&quot;</span><br>fmt.Println(<span class="hljs-built_in">len</span>(string1)) 		<span class="hljs-comment">// len(str)打印字符串长度</span><br><br><span class="hljs-comment">// 拼接字符串</span><br>	string1 := <span class="hljs-string">&quot;Hello world&quot;</span><br>	fmt.Println(<span class="hljs-built_in">len</span>(string1))<br>	string2 := <span class="hljs-string">&quot;ing&quot;</span><br>	fmt.Println(string1 + string2)<br><br>	<span class="hljs-comment">// 打印Hello worlding</span><br><br><span class="hljs-comment">// 字符串分割</span><br>	fmt.Println(strings.Split(string1, <span class="hljs-string">&quot; &quot;</span>)) <span class="hljs-comment">// 返回[Hello world] 是一个String类型</span><br>  strings.Split(待分割的字符串, 分割的字符)	<br><br><span class="hljs-comment">// 判断是否包含子串</span><br>  fmt.Println(strings.Contains(string1, <span class="hljs-string">&quot;world&quot;</span>)) <span class="hljs-comment">// 返回bool的true或者false</span><br>  String.Contains(带判断的字符串, 子串)<br><br><span class="hljs-comment">// 判断中字符串的前缀后缀</span><br>	fmt.Println(strings.HasPrefix(string1, <span class="hljs-string">&quot;He&quot;</span>))  <span class="hljs-comment">//true</span><br>	fmt.Println(strings.HasSuffix(string1, <span class="hljs-string">&quot;LD&quot;</span>))	 <span class="hljs-comment">// false</span><br><br>  strings.Hasprefix()	strings.HasSuffix()<br><br><span class="hljs-comment">// 判断子串的位置以及最后的位置</span><br>	fmt.Println(strings.Index(string1, <span class="hljs-string">&quot;w&quot;</span>))  <span class="hljs-comment">// 6</span><br>	fmt.Println(strings.LastIndex(string1, <span class="hljs-string">&quot;o&quot;</span>)) <span class="hljs-comment">// 7</span><br><br><span class="hljs-comment">// 字符串切片连接</span><br>	string2 := []<span class="hljs-type">string</span>&#123;<span class="hljs-string">&quot;hello&quot;</span>, <span class="hljs-string">&quot;wink&quot;</span>, <span class="hljs-string">&quot;!&quot;</span>&#125;<br>	fmt.Println(strings.Join(string2, <span class="hljs-string">&quot;-&quot;</span>))<br>	输出 hello-wink-!<br><br></code></pre></td></tr></table></figure>
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x3D;</td>
+<td></td>
+</tr>
+<tr>
+<td>+&#x3D;</td>
+<td></td>
+</tr>
+<tr>
+<td>-&#x3D;</td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">var</span> num1 <span class="hljs-type">int</span><br>num1 = <span class="hljs-number">5</span><br>num1 += <span class="hljs-number">5</span><br>fmt.Println(num1)<br></code></pre></td></tr></table></figure>
 
-<h2 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h2><p><strong>byte与rune</strong></p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs go"><br><span class="hljs-keyword">var</span> c1 <span class="hljs-type">byte</span> = <span class="hljs-string">&#x27;c&#x27;</span><br><span class="hljs-keyword">var</span> c2 <span class="hljs-type">rune</span> = <span class="hljs-string">&#x27;d&#x27;</span><br>fmt.Printf(<span class="hljs-string">&quot;c1: %T, c2: %T&quot;</span>, c1, c2)<br><br><span class="hljs-comment">// 打印c1: uint8, c2: int32</span><br></code></pre></td></tr></table></figure>
-
-<p>rune可以打印出中文</p>
 
               
             </div>
@@ -372,20 +418,20 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>golang-基本数据类型</div>
-      <div>http://www.i4mhmh.cn/2022/06/07/golang-02/</div>
+      <div>Go语言运算符</div>
+      <div>http://www.i4mhmh.cn/2022/06/08/golang-03/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>wink</div>
+          <div>wink-shelby</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年6月7日</div>
+          <div>2022年6月8日</div>
         </div>
       
       
@@ -415,9 +461,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/06/08/golang-03/" title="Go语言运算符">
+                      <a href="/2022/06/08/golang-04/" title="golang-流程控制">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Go语言运算符</span>
+                        <span class="hidden-mobile">golang-流程控制</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -425,8 +471,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/07/golang-01/" title="golang-变量与常量">
-                        <span class="hidden-mobile">golang-变量与常量</span>
+                      <a href="/2022/06/07/golang-02/" title="golang-基本数据类型">
+                        <span class="hidden-mobile">golang-基本数据类型</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
