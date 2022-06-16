@@ -13,16 +13,16 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="wink">
+  <meta name="author" content="Wantosleep">
   <meta name="keywords" content="">
   
-    <meta name="description" content="第三天-数组">
+    <meta name="description" content="切片">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>golang-数组 - 全世界的面我都吃一遍</title>
+  <title>golang-切片 - 全世界的面我都吃一遍</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -174,7 +174,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="golang-数组"></span>
+            <span id="subtitle" data-typed-text="golang-切片"></span>
           
         </div>
 
@@ -184,14 +184,14 @@
     
       <span class="post-meta mr-2">
         <i class="iconfont icon-author" aria-hidden="true"></i>
-        wink
+        Wantosleep
       </span>
     
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-08 18:38" pubdate>
-          2022年6月8日 晚上
+        <time datetime="2022-06-10 17:10" pubdate>
+          2022年6月10日 下午
         </time>
       </span>
     
@@ -202,7 +202,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          1.2k 字
         
       </span>
     
@@ -213,7 +213,7 @@
         
         
         
-          12 分钟
+          11 分钟
         
       </span>
     
@@ -259,28 +259,43 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">golang-数组</h1>
+            <h1 style="display: none">golang-切片</h1>
             
             <div class="markdown-body">
               
-              <h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><h2 id="数组定义"><a href="#数组定义" class="headerlink" title="数组定义"></a>数组定义</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">var</span> 数组变量名 [元素数量]<span class="hljs-keyword">type</span><br></code></pre></td></tr></table></figure>
+              <h1 id="切片-slice"><a href="#切片-slice" class="headerlink" title="切片(slice)"></a>切片(slice)</h1><p>切片由 底层数组指针、切片的长度(len)、切片的容量(cap)三部分组成</p>
+<p>由于数组长度固定,由于具有许多局限性.例如:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs go">a := [<span class="hljs-number">3</span>]<span class="hljs-type">int</span>&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>例如:</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">var</span> a [<span class="hljs-number">5</span>]<span class="hljs-type">int</span><br><span class="hljs-keyword">var</span> b [<span class="hljs-number">5</span>]<span class="hljs-type">int</span><br><br><span class="hljs-comment">//访问数组元素</span><br>a[<span class="hljs-number">0</span>]=<span class="hljs-number">0</span>    			<span class="hljs-comment">//int默认值0</span><br></code></pre></td></tr></table></figure>
+<p>在a定义好三个元素之后,再往a数组中添加新元素将会出错</p>
+<p><strong>切片基于数组的封装, 可变长度, 是一个引用类型, 内部包括<code>地址</code> ,<code>长度</code></strong>,<strong><code>容量</code></strong></p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">var</span> a []<span class="hljs-type">string</span><br><span class="hljs-keyword">var</span> b []<span class="hljs-type">int</span><br><span class="hljs-keyword">var</span> c = []<span class="hljs-type">bool</span>&#123;<span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>&#125;<br><br>fmt.Println(a, b, c)<br></code></pre></td></tr></table></figure>
+
+<h2 id="基于数组得到切片"><a href="#基于数组得到切片" class="headerlink" title="基于数组得到切片"></a>基于数组得到切片</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs go">a := [...]<span class="hljs-type">int</span>&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>&#125;<br>b := a[<span class="hljs-number">1</span>:<span class="hljs-number">4</span>]<br>fmt.Println(b)<br>fmt.Printf(<span class="hljs-string">&quot;%T&quot;</span>, b)<br><br><br><span class="hljs-comment">// 结果</span><br>[<span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>]<br> []<span class="hljs-type">int</span><br><br></code></pre></td></tr></table></figure>
+
+<p><strong>切片可以再次切割</strong></p>
+<h2 id="make函数构造切片"><a href="#make函数构造切片" class="headerlink" title="make函数构造切片"></a>make函数构造切片</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs go">d := <span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>, <span class="hljs-number">5</span>, <span class="hljs-number">10</span>)<br>fmt.Println(d)<br> fmt.Println(<span class="hljs-built_in">cap</span>(d))<br><span class="hljs-comment">//输出</span><br>[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>]<br><span class="hljs-number">10</span><br><br> <span class="hljs-built_in">make</span>(类型, 数量, 长度	)<br></code></pre></td></tr></table></figure>
+
+<p><img src="/../img/image-20220610175258374.png" srcset="/img/loading.gif" lazyload alt="image-20220610175258374"></p>
+<p>​        B站上<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Qb411375e/?spm_id_from=333.788&vd_source=c34f05485a32814a9ec609f6ab3e3497">Go语言基础07 切片_哔哩哔哩_bilibili</a>七米老师讲的很清楚,这张图很好的诠释了切片与数组的关系,以及基于数组构造的切片结构内容是如何的</p>
+<h2 id="切片不能直接比较"><a href="#切片不能直接比较" class="headerlink" title="切片不能直接比较"></a>切片不能直接比较</h2><p>切片引用的数组地址,所以只能与nil对比<code>nil</code>是地址类型的默认值</p>
+<h2 id="切片是深拷贝"><a href="#切片是深拷贝" class="headerlink" title="切片是深拷贝"></a>切片是深拷贝</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs go">d := <span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>, <span class="hljs-number">5</span>, <span class="hljs-number">10</span>)<br>cd := d<br>cd[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span><br>fmt.Println(d)<br><br><br><span class="hljs-comment">// 打印[1 0 0 0 0]</span><br><br></code></pre></td></tr></table></figure>
 
 
 
-<h2 id="数组初始化"><a href="#数组初始化" class="headerlink" title="数组初始化"></a>数组初始化</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// 数组初始化</span><br><span class="hljs-comment">// 1. 定义时使用初始值</span><br><span class="hljs-keyword">var</span> nameArr = [<span class="hljs-number">3</span>]<span class="hljs-type">string</span>&#123;<span class="hljs-string">&quot;tom&quot;</span>, <span class="hljs-string">&quot;jerry&quot;</span>, <span class="hljs-string">&quot;alice&quot;</span>&#125;<br>fmt.Println(nameArr)<br><br><span class="hljs-comment">// 2. 编译器推导数组长度</span><br><span class="hljs-keyword">var</span> numArr = [...]<span class="hljs-type">int</span>&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>&#125;<br>fmt.Println(numArr)<br><br><span class="hljs-comment">// 3. 索引赋值</span><br><span class="hljs-keyword">var</span> ageArr = [...]<span class="hljs-type">int</span>&#123;<span class="hljs-number">0</span>: <span class="hljs-number">1</span>, <span class="hljs-number">3</span>: <span class="hljs-number">7</span>&#125;<br>fmt.Println(ageArr)<br></code></pre></td></tr></table></figure>
+<h2 id="切片的遍历"><a href="#切片的遍历" class="headerlink" title="切片的遍历"></a>切片的遍历</h2><p><strong>与数组一样</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs go">d := <span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>, <span class="hljs-number">5</span>, <span class="hljs-number">10</span>)<br><span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(d); i++ &#123;<br>	fmt.Println(d[i])<br>&#125;<br><br><span class="hljs-keyword">for</span> i, i2 := <span class="hljs-keyword">range</span> d &#123;<br>	fmt.Println(i, i2)<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="数组遍历"><a href="#数组遍历" class="headerlink" title="数组遍历"></a>数组遍历</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// 1. for</span><br>	<span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(ageArr); i++ &#123;<br>		fmt.Println(ageArr[i])<br>	&#125;<br><br><span class="hljs-comment">// 2. for range遍历</span><br>	<span class="hljs-keyword">for</span> i, v := <span class="hljs-keyword">range</span> ageArr &#123;<br>		fmt.Println(i, v)<br>	&#125;<br><br>	<span class="hljs-comment">// 打印结果</span><br>	<span class="hljs-number">0</span> <span class="hljs-number">1</span><br>  <span class="hljs-number">1</span> <span class="hljs-number">0</span><br>  <span class="hljs-number">2</span> <span class="hljs-number">0</span><br>  <span class="hljs-number">3</span> <span class="hljs-number">7</span><br><span class="hljs-comment">// i代表数组的index,v代表数组的索引对应的值</span><br>不获取索引用<span class="hljs-keyword">for</span> _,v := <span class="hljs-keyword">range</span> xxxx<br></code></pre></td></tr></table></figure>
 
-<h1 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h1><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs go">classArray := [<span class="hljs-number">2</span>][<span class="hljs-number">3</span>]<span class="hljs-type">string</span>&#123;  <span class="hljs-comment">// 2,3分别指有几行,几列从1开始</span><br>   &#123;<span class="hljs-string">&quot;1-3&quot;</span>, <span class="hljs-string">&quot;1-4&quot;</span>, <span class="hljs-string">&quot;1-6&quot;</span>&#125;,<br>   &#123;<span class="hljs-string">&quot;2-3&quot;</span>, <span class="hljs-string">&quot;2-5&quot;</span>, <span class="hljs-string">&quot;2-9&quot;</span>&#125;,<br>&#125;<br>fmt.Println(classArray[<span class="hljs-number">0</span>][<span class="hljs-number">2</span>])<br><br><br></code></pre></td></tr></table></figure>
 
-<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">for</span> _, v1 := <span class="hljs-keyword">range</span> classArray &#123;<br>   <span class="hljs-keyword">for</span> _, v2 := <span class="hljs-keyword">range</span> v1 &#123;<br>      fmt.Println(v2)<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="append为切片添加元素"><a href="#append为切片添加元素" class="headerlink" title="append为切片添加元素"></a>append为切片添加元素</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs go">	<span class="hljs-keyword">var</span> a []<span class="hljs-type">int</span>	<br>	a = <span class="hljs-built_in">append</span>(a, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)<br>	fmt.Println(a)<br><br> <span class="hljs-comment">// 打印</span><br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">  	[1 2 3 4 5]</span><br><span class="hljs-comment">  **/</span><br><br>	a = <span class="hljs-built_in">append</span>(a, b...)<br>	fmt.Println(a)<br><br><span class="hljs-comment">// [1 2 3 4 5 7 8 9 0]</span><br><br></code></pre></td></tr></table></figure>
 
-<p>两个for range, 一个遍历二维数组的第一层,一个在取值之后遍历第二层</p>
-<p><strong>多维数组只有最外层可以[…]来推导数组长度即a[…][x]</strong></p>
-<h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h1><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-number">1.</span> 求数组所有元素 arra[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>]的和<br><br>	<span class="hljs-keyword">var</span> sum <span class="hljs-type">int</span><br>	<span class="hljs-comment">//声明并定义一个数组</span><br>	<span class="hljs-keyword">var</span> arra = [...]<span class="hljs-type">int</span>&#123;<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>&#125;<br>	<span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(arra); i++ &#123;<br>		sum += arra[i]<br>	&#125;<br>	fmt.Println(sum)<br><br><span class="hljs-number">2.</span> 求数组中指定下标对应值和为<span class="hljs-number">8</span>的下标<br>		<span class="hljs-keyword">var</span> arra = [...]<span class="hljs-type">int</span>&#123;<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>&#125;<br>		<span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(arra); i++ &#123;<br>		<span class="hljs-keyword">for</span> j := i; j &lt; <span class="hljs-built_in">len</span>(arra); j++ &#123;<br>			<span class="hljs-keyword">if</span> arra[i]+arra[j] == <span class="hljs-number">8</span> &#123;<br>				fmt.Printf(<span class="hljs-string">&quot;&#123;%v, %v&#125;&quot;</span>, i, j)<br>			&#125;<br>		&#125;<br>	&#125;<br><br>  <span class="hljs-comment">// 打印出&#123;0, 3&#125;&#123;1, 2&#125;</span><br><br></code></pre></td></tr></table></figure>
+<p><strong>切片声明之后需要初始化才能使用, 声明并不开辟内存空间, 尽量不要让切盼自动扩容</strong></p>
+<h2 id="使用copy函数复制切片"><a href="#使用copy函数复制切片" class="headerlink" title="使用copy函数复制切片"></a>使用copy函数复制切片</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs go">a := []<span class="hljs-type">int</span>&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>&#125;<br>b := <span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>)<br><span class="hljs-built_in">copy</span>(b, a)<br><br><span class="hljs-comment">// 此时a,b切片中元素相等,但a,b不指向同一个地址</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="切片删除"><a href="#切片删除" class="headerlink" title="切片删除"></a>切片删除</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs go">a := []<span class="hljs-type">string</span>&#123;<span class="hljs-string">&quot;shanghai&quot;</span>, <span class="hljs-string">&quot;baijing&quot;</span>, <span class="hljs-string">&quot;henan&quot;</span>&#125;<br>a = <span class="hljs-built_in">append</span>(a[<span class="hljs-number">0</span>:<span class="hljs-number">1</span>], a[<span class="hljs-number">2</span>:]...)<br><span class="hljs-comment">// 删除第index个元素, append(arra[:index], arra[index+1:]...)</span><br>fmt.Println(a)<br></code></pre></td></tr></table></figure>
 
 
               
@@ -288,27 +303,6 @@
             <hr/>
             <div>
               <div class="post-metas my-3">
-  
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/" class="category-chain-item">编程学习</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
   
   
     <div class="post-meta">
@@ -326,20 +320,20 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>golang-数组</div>
-      <div>http://www.i4mhmh.cn/2022/06/08/golang-05/</div>
+      <div>golang-切片</div>
+      <div>http://www.i4mhmh.cn/2022/06/10/golang-06/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>wink</div>
+          <div>Wantosleep</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年6月8日</div>
+          <div>2022年6月10日</div>
         </div>
       
       
@@ -369,9 +363,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/06/10/golang-06/" title="golang-切片">
+                      <a href="/2022/06/14/golang-07/" title="golang-Map">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">golang-切片</span>
+                        <span class="hidden-mobile">golang-Map</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -379,8 +373,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/08/golang-04/" title="golang-流程控制">
-                        <span class="hidden-mobile">golang-流程控制</span>
+                      <a href="/2022/06/08/golang-05/" title="golang-数组">
+                        <span class="hidden-mobile">golang-数组</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
