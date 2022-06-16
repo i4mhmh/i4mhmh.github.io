@@ -8,7 +8,7 @@
     <link href="/2022/06/16/golang-08/"/>
     <url>/2022/06/16/golang-08/</url>
     
-    <content type="html"><![CDATA[<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1>]]></content>
+    <content type="html"><![CDATA[<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="内置函数介绍"><a href="#内置函数介绍" class="headerlink" title="内置函数介绍"></a>内置函数介绍</h2><table><thead><tr><th>内置函数</th><th>作用</th></tr></thead><tbody><tr><td>close</td><td>channel</td></tr><tr><td>len</td><td>求长度(string, arra, map)</td></tr><tr><td>new</td><td>分配内存,(int, char, bool)</td></tr><tr><td>make</td><td>分配内存(map, slice)</td></tr><tr><td>append</td><td>追加元素到数组、slice</td></tr><tr><td>panic和recover</td><td>用来做错误处理</td></tr></tbody></table>]]></content>
     
     
     <categories>
