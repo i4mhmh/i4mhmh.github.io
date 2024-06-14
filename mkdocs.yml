@@ -1,0 +1,7 @@
+site_name: Mlscat
+
+theme:
+  name: "material"
+
+plugins:
+  - search
