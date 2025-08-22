@@ -1,0 +1,1116 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="M0nk3y">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
+    
+    
+      
+        <title>杂项 - mlscat</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="mlscat" class="md-header__button md-logo" aria-label="mlscat" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            mlscat
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              杂项
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="mlscat" class="md-nav__button md-logo" aria-label="mlscat" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    mlscat
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Attack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data_Loader
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leakage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leakage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    utils
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quickstart
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Quickstart
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quickstart
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart#_1" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CPA攻击
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">杂项</h1>
+<p>新版本的tf用one_cycle_lr会报错，修改如下：</p>
+<pre><code class="language-python">class OneCycleLR(Callback):
+    def __init__(self,
+                 num_samples,
+                 batch_size,
+                 max_lr,
+                 end_percentage=0.1,
+                 scale_percentage=None,
+                 maximum_momentum=0.95,
+                 minimum_momentum=0.85,
+                 verbose=True):
+        &quot;&quot;&quot; This callback implements a cyclical learning rate policy (CLR).
+        This is a special case of Cyclic Learning Rates, where we have only 1 cycle.
+        After the completion of 1 cycle, the learning rate will decrease rapidly to
+        100th its initial lowest value.
+
+        # Arguments:
+            num_samples: Integer. Number of samples in the dataset.
+            batch_size: Integer. Batch size during training.
+            max_lr: Float. Initial learning rate. This also sets the
+                starting learning rate (which will be 10x smaller than
+                this), and will increase to this value during the first cycle.
+            end_percentage: Float. The percentage of all the epochs of training
+                that will be dedicated to sharply decreasing the learning
+                rate after the completion of 1 cycle. Must be between 0 and 1.
+            scale_percentage: Float or None. If float, must be between 0 and 1.
+                If None, it will compute the scale_percentage automatically
+                based on the `end_percentage`.
+            maximum_momentum: Optional. Sets the maximum momentum (initial)
+                value, which gradually drops to its lowest value in half-cycle,
+                then gradually increases again to stay constant at this max value.
+                Can only be used with SGD Optimizer.
+            minimum_momentum: Optional. Sets the minimum momentum at the end of
+                the half-cycle. Can only be used with SGD Optimizer.
+            verbose: Bool. Whether to print the current learning rate after every
+                epoch.
+
+        # Reference
+            - [A disciplined approach to neural network hyper-parameters: Part 1 -- learning rate, batch size, weight_decay, and weight decay](https://arxiv.org/abs/1803.09820)
+            - [Super-Convergence: Very Fast Training of Residual Networks Using Large Learning Rates](https://arxiv.org/abs/1708.07120)
+        &quot;&quot;&quot;
+        super(OneCycleLR, self).__init__()
+
+        if end_percentage &lt; 0. or end_percentage &gt; 1.:
+            raise ValueError(&quot;`end_percentage` must be between 0 and 1&quot;)
+
+        if scale_percentage is not None and (scale_percentage &lt; 0. or scale_percentage &gt; 1.):
+            raise ValueError(&quot;`scale_percentage` must be between 0 and 1&quot;)
+
+        self.initial_lr = max_lr
+        self.end_percentage = end_percentage
+        self.scale = float(scale_percentage) if scale_percentage is not None else float(end_percentage)
+        self.max_momentum = maximum_momentum
+        self.min_momentum = minimum_momentum
+        self.verbose = verbose
+
+        if self.max_momentum is not None and self.min_momentum is not None:
+            self._update_momentum = True
+        else:
+            self._update_momentum = False
+
+        self.clr_iterations = 0.
+        self.history = {}
+
+        self.epochs = None
+        self.batch_size = batch_size
+        self.samples = num_samples
+        self.steps = None
+        self.num_iterations = None
+        self.mid_cycle_id = None
+
+    def _reset(self):
+        &quot;&quot;&quot;
+        Reset the callback.
+        &quot;&quot;&quot;
+        self.clr_iterations = 0.
+        self.history = {}
+
+    def compute_lr(self):
+        &quot;&quot;&quot;
+        Compute the learning rate based on which phase of the cycle it is in.
+
+        - If in the first half of training, the learning rate gradually increases.
+        - If in the second half of training, the learning rate gradually decreases.
+        - If in the final `end_percentage` portion of training, the learning rate
+            is quickly reduced to near 100th of the original min learning rate.
+
+        # Returns:
+            the new learning rate
+        &quot;&quot;&quot;
+        if self.clr_iterations &gt; 2 * self.mid_cycle_id:
+            current_percentage = (self.clr_iterations - 2 * self.mid_cycle_id)
+            current_percentage /= float((self.num_iterations - 2 * self.mid_cycle_id))
+            new_lr = self.initial_lr * (1. + (current_percentage *
+                                              (1. - 100.) / 100.)) * self.scale
+
+        elif self.clr_iterations &gt; self.mid_cycle_id:
+            current_percentage = 1. - (
+                    self.clr_iterations - self.mid_cycle_id) / self.mid_cycle_id
+            new_lr = self.initial_lr * (1. + current_percentage *
+                                        (self.scale * 100 - 1.)) * self.scale
+
+        else:
+            current_percentage = self.clr_iterations / self.mid_cycle_id
+            new_lr = self.initial_lr * (1. + current_percentage *
+                                        (self.scale * 100 - 1.)) * self.scale
+
+        if self.clr_iterations == self.num_iterations:
+            self.clr_iterations = 0
+
+        return new_lr
+
+    def compute_momentum(self):
+        &quot;&quot;&quot;
+         Compute the momentum based on which phase of the cycle it is in.
+
+        - If in the first half of training, the momentum gradually decreases.
+        - If in the second half of training, the momentum gradually increases.
+        - If in the final `end_percentage` portion of training, the momentum value
+            is kept constant at the maximum initial value.
+
+        # Returns:
+            the new momentum value
+        &quot;&quot;&quot;
+        if self.clr_iterations &gt; 2 * self.mid_cycle_id:
+            new_momentum = self.max_momentum
+
+        elif self.clr_iterations &gt; self.mid_cycle_id:
+            current_percentage = 1. - ((self.clr_iterations - self.mid_cycle_id) / float(
+                self.mid_cycle_id))
+            new_momentum = self.max_momentum - current_percentage * (
+                    self.max_momentum - self.min_momentum)
+
+        else:
+            current_percentage = self.clr_iterations / float(self.mid_cycle_id)
+            new_momentum = self.max_momentum - current_percentage * (
+                    self.max_momentum - self.min_momentum)
+
+        return new_momentum
+
+    def on_train_begin(self, logs={}):
+        logs = logs or {}
+
+        self.epochs = self.params['epochs']
+        # When fit generator is used
+        # self.params don't have the elements 'batch_size' and 'samples'
+        # self.batch_size = self.params['batch_size']
+        # self.samples = self.params['samples']
+        self.steps = self.params['steps']
+
+        if self.steps is not None:
+            self.num_iterations = self.epochs * self.steps
+        else:
+            if (self.samples % self.batch_size) == 0:
+                remainder = 0
+            else:
+                remainder = 1
+            self.num_iterations = (self.epochs + remainder) * self.samples // self.batch_size
+
+        self.mid_cycle_id = int(self.num_iterations * ((1. - self.end_percentage)) / float(2))
+
+        self._reset()
+        K.set_value(self.model.optimizer.lr, self.compute_lr())
+
+        if self._update_momentum:
+            if not hasattr(self.model.optimizer, 'momentum'):
+                raise ValueError(&quot;Momentum can be updated only on SGD optimizer !&quot;)
+
+            new_momentum = self.compute_momentum()
+            K.set_value(self.model.optimizer.momentum, new_momentum)
+
+    def on_batch_end(self, epoch, logs=None):
+        logs = logs or {}
+
+        self.clr_iterations += 1
+        new_lr = self.compute_lr()
+
+        self.history.setdefault('lr', []).append(
+            K.get_value(self.model.optimizer.lr))
+        K.set_value(self.model.optimizer.lr, new_lr)
+
+        if self._update_momentum:
+            if not hasattr(self.model.optimizer, 'momentum'):
+                raise ValueError(&quot;Momentum can be updated only on SGD optimizer !&quot;)
+
+            new_momentum = self.compute_momentum()
+
+            self.history.setdefault('momentum', []).append(
+                K.get_value(self.model.optimizer.momentum))
+            K.set_value(self.model.optimizer.momentum, new_momentum)
+
+        for k, v in logs.items():
+            self.history.setdefault(k, []).append(v)
+
+    def on_epoch_end(self, epoch, logs=None):
+        if self.verbose:
+            if self._update_momentum:
+                print(&quot; - lr: %0.5f - momentum: %0.2f &quot; %
+                      (self.history['lr'][-1], self.history['momentum'][-1]))
+
+            else:
+                print(&quot; - lr: %0.5f &quot; % (self.history['lr'][-1]))
+
+
+class LRFinder(Callback):
+    def __init__(self,
+                 num_samples,
+                 batch_size,
+                 minimum_lr=1e-5,
+                 maximum_lr=10.,
+                 lr_scale='exp',
+                 validation_data=None,
+                 validation_sample_rate=5,
+                 stopping_criterion_factor=4.,
+                 loss_smoothing_beta=0.98,
+                 save_dir=None,
+                 verbose=True):
+        &quot;&quot;&quot;
+        This class uses the Cyclic Learning Rate history to find a
+        set of learning rates that can be good initializations for the
+        One-Cycle training proposed by Leslie Smith in the paper referenced
+        below.
+
+        A port of the Fast.ai implementation for Keras.
+
+        # Note
+        This requires that the model be trained for exactly 1 epoch. If the model
+        is trained for more epochs, then the metric calculations are only done for
+        the first epoch.
+
+        # Interpretation
+        Upon visualizing the loss plot, check where the loss starts to increase
+        rapidly. Choose a learning rate at somewhat prior to the corresponding
+        position in the plot for faster convergence. This will be the maximum_lr lr.
+        Choose the max value as this value when passing the `max_val` argument
+        to OneCycleLR callback.
+
+        Since the plot is in log-scale, you need to compute 10 ^ (-k) of the x-axis
+
+        # Arguments:
+            num_samples: Integer. Number of samples in the dataset.
+            batch_size: Integer. Batch size during training.
+            minimum_lr: Float. Initial learning rate (and the minimum).
+            maximum_lr: Float. Final learning rate (and the maximum).
+            lr_scale: Can be one of ['exp', 'linear']. Chooses the type of
+                scaling for each update to the learning rate during subsequent
+                batches. Choose 'exp' for large range and 'linear' for small range.
+            validation_data: Requires the validation dataset as a tuple of
+                (X, y) belonging to the validation set. If provided, will use the
+                validation set to compute the loss metrics. Else uses the training
+                batch loss. Will warn if not provided to alert the user.
+            validation_sample_rate: Positive or Negative Integer. Number of batches to sample from the
+                validation set per iteration of the LRFinder. Larger number of
+                samples will reduce the variance but will take longer time to execute
+                per batch.
+
+                If Positive &gt; 0, will sample from the validation dataset
+                If Megative, will use the entire dataset
+            stopping_criterion_factor: Integer or None. A factor which is used
+                to measure large increase in the loss value during training.
+                Since callbacks cannot stop training of a model, it will simply
+                stop logging the additional values from the epochs after this
+                stopping criterion has been met.
+                If None, this check will not be performed.
+            loss_smoothing_beta: Float. The smoothing factor for the moving
+                average of the loss function.
+            save_dir: Optional, String. If passed a directory path, the callback
+                will save the running loss and learning rates to two separate numpy
+                arrays inside this directory. If the directory in this path does not
+                exist, they will be created.
+            verbose: Whether to print the learning rate after every batch of training.
+
+        # References:
+            - [A disciplined approach to neural network hyper-parameters: Part 1 -- learning rate, batch size, weight_decay, and weight decay](https://arxiv.org/abs/1803.09820)
+        &quot;&quot;&quot;
+        super(LRFinder, self).__init__()
+
+        if lr_scale not in ['exp', 'linear']:
+            raise ValueError(&quot;`lr_scale` must be one of ['exp', 'linear']&quot;)
+
+        if validation_data is not None:
+            self.validation_data = validation_data
+            self.use_validation_set = True
+
+            if validation_sample_rate &gt; 0 or validation_sample_rate &lt; 0:
+                self.validation_sample_rate = validation_sample_rate
+            else:
+                raise ValueError(&quot;`validation_sample_rate` must be a positive or negative integer other than o&quot;)
+        else:
+            self.use_validation_set = False
+            self.validation_sample_rate = 0
+
+        self.num_samples = num_samples
+        self.batch_size = batch_size
+        self.initial_lr = minimum_lr
+        self.final_lr = maximum_lr
+        self.lr_scale = lr_scale
+        self.stopping_criterion_factor = stopping_criterion_factor
+        self.loss_smoothing_beta = loss_smoothing_beta
+        self.save_dir = save_dir
+        self.verbose = verbose
+
+        self.num_batches_ = num_samples // batch_size
+        self.current_lr_ = minimum_lr
+
+        if lr_scale == 'exp':
+            self.lr_multiplier_ = (maximum_lr / float(minimum_lr)) ** (
+                    1. / float(self.num_batches_))
+        else:
+            extra_batch = int((num_samples % batch_size) != 0)
+            self.lr_multiplier_ = np.linspace(
+                minimum_lr, maximum_lr, num=self.num_batches_ + extra_batch)
+
+        # If negative, use entire validation set
+        if self.validation_sample_rate &lt; 0:
+            self.validation_sample_rate = self.validation_data[0].shape[0] // batch_size
+
+        self.current_batch_ = 0
+        self.current_epoch_ = 0
+        self.best_loss_ = 1e6
+        self.running_loss_ = 0.
+
+        self.history = {}
+
+    def on_train_begin(self, logs=None):
+
+        self.current_epoch_ = 1
+        K.set_value(self.model.optimizer.lr, self.initial_lr)
+
+        warnings.simplefilter(&quot;ignore&quot;)
+
+    def on_epoch_begin(self, epoch, logs=None):
+        self.current_batch_ = 0
+
+        if self.current_epoch_ &gt; 1:
+            warnings.warn(
+                &quot;\n\nLearning rate finder should be used only with a single epoch. &quot;
+                &quot;Hereafter, the callback will not measure the losses.\n\n&quot;)
+
+    def on_batch_begin(self, batch, logs=None):
+        self.current_batch_ += 1
+
+    def on_batch_end(self, batch, logs=None):
+        if self.current_epoch_ &gt; 1:
+            return
+
+        if self.use_validation_set:
+            X, Y = self.validation_data[0], self.validation_data[1]
+
+            # use 5 random batches from test set for fast approximate of loss
+            num_samples = self.batch_size * self.validation_sample_rate
+
+            if num_samples &gt; X.shape[0]:
+                num_samples = X.shape[0]
+
+            idx = np.random.choice(X.shape[0], num_samples, replace=False)
+            x = X[idx]
+            y = Y[idx]
+
+            values = self.model.evaluate(x, y, batch_size=self.batch_size, verbose=False)
+            loss = values[0]
+        else:
+            loss = logs['loss']
+
+        # smooth the loss value and bias correct
+        running_loss = self.loss_smoothing_beta * loss + (
+                1. - self.loss_smoothing_beta) * loss
+        running_loss = running_loss / (
+                1. - self.loss_smoothing_beta ** self.current_batch_)
+
+        # stop logging if loss is too large
+        if self.current_batch_ &gt; 1 and self.stopping_criterion_factor is not None and (
+                running_loss &gt;
+                self.stopping_criterion_factor * self.best_loss_):
+
+            if self.verbose:
+                print(&quot; - LRFinder: Skipping iteration since loss is %d times as large as best loss (%0.4f)&quot;
+                      % (self.stopping_criterion_factor, self.best_loss_))
+            return
+
+        if running_loss &lt; self.best_loss_ or self.current_batch_ == 1:
+            self.best_loss_ = running_loss
+
+        current_lr = K.get_value(self.model.optimizer.lr)
+
+        self.history.setdefault('running_loss_', []).append(running_loss)
+        if self.lr_scale == 'exp':
+            self.history.setdefault('log_lrs', []).append(np.log10(current_lr))
+        else:
+            self.history.setdefault('log_lrs', []).append(current_lr)
+
+        # compute the lr for the next batch and update the optimizer lr
+        if self.lr_scale == 'exp':
+            current_lr *= self.lr_multiplier_
+        else:
+            current_lr = self.lr_multiplier_[self.current_batch_ - 1]
+
+        K.set_value(self.model.optimizer.lr, current_lr)
+
+        # save the other metrics as well
+        for k, v in logs.items():
+            self.history.setdefault(k, []).append(v)
+
+        if self.verbose:
+            if self.use_validation_set:
+                print(&quot; - LRFinder: val_loss: %1.4f - lr = %1.8f &quot; %
+                      (values[0], current_lr))
+            else:
+                print(&quot; - LRFinder: lr = %1.8f &quot; % current_lr)
+
+    def on_epoch_end(self, epoch, logs=None):
+        if self.save_dir is not None and self.current_epoch_ &lt;= 1:
+            if not os.path.exists(self.save_dir):
+                os.makedirs(self.save_dir)
+
+            losses_path = os.path.join(self.save_dir, 'losses.npy')
+            lrs_path = os.path.join(self.save_dir, 'lrs.npy')
+
+            np.save(losses_path, self.losses)
+            np.save(lrs_path, self.lrs)
+
+            if self.verbose:
+                print(&quot;\tLR Finder : Saved the losses and learning rate values in path : {%s}&quot;
+                      % (self.save_dir))
+
+        self.current_epoch_ += 1
+
+        warnings.simplefilter(&quot;default&quot;)
+
+    def plot_schedule(self, clip_beginning=None, clip_endding=None):
+        &quot;&quot;&quot;
+        Plots the schedule from the callback itself.
+
+        # Arguments:
+            clip_beginning: Integer or None. If positive integer, it will
+                remove the specified portion of the loss graph to remove the large
+                loss values in the beginning of the graph.
+            clip_endding: Integer or None. If negative integer, it will
+                remove the specified portion of the ending of the loss graph to
+                remove the sharp increase in the loss values at high learning rates.
+        &quot;&quot;&quot;
+        try:
+            import matplotlib.pyplot as plt
+            plt.style.use('seaborn-white')
+        except ImportError:
+            print(
+                &quot;Matplotlib not found. Please use `pip install matplotlib` first.&quot;
+            )
+            return
+
+        if clip_beginning is not None and clip_beginning &lt; 0:
+            clip_beginning = -clip_beginning
+
+        if clip_endding is not None and clip_endding &gt; 0:
+            clip_endding = -clip_endding
+
+        losses = self.losses
+        lrs = self.lrs
+
+        if clip_beginning:
+            losses = losses[clip_beginning:]
+            lrs = lrs[clip_beginning:]
+
+        if clip_endding:
+            losses = losses[:clip_endding]
+            lrs = lrs[:clip_endding]
+
+        plt.plot(lrs, losses)
+        plt.title('Learning rate vs Loss')
+        plt.xlabel('learning rate')
+        plt.ylabel('loss')
+        plt.show()
+
+    @classmethod
+    def restore_schedule_from_dir(cls,
+                                  directory,
+                                  clip_beginning=None,
+                                  clip_endding=None):
+        &quot;&quot;&quot;
+        Loads the training history from the saved numpy files in the given directory.
+
+        # Arguments:
+            directory: String. Path to the directory where the serialized numpy
+                arrays of the loss and learning rates are saved.
+            clip_beginning: Integer or None. If positive integer, it will
+                remove the specified portion of the loss graph to remove the large
+                loss values in the beginning of the graph.
+            clip_endding: Integer or None. If negative integer, it will
+                remove the specified portion of the ending of the loss graph to
+                remove the sharp increase in the loss values at high learning rates.
+
+        Returns:
+            tuple of (losses, learning rates)
+        &quot;&quot;&quot;
+        if clip_beginning is not None and clip_beginning &lt; 0:
+            clip_beginning = -clip_beginning
+
+        if clip_endding is not None and clip_endding &gt; 0:
+            clip_endding = -clip_endding
+
+        losses_path = os.path.join(directory, 'losses.npy')
+        lrs_path = os.path.join(directory, 'lrs.npy')
+
+        if not os.path.exists(losses_path) or not os.path.exists(lrs_path):
+            print(&quot;%s and %s could not be found at directory : {%s}&quot; %
+                  (losses_path, lrs_path, directory))
+
+            losses = None
+            lrs = None
+
+        else:
+            losses = np.load(losses_path)
+            lrs = np.load(lrs_path)
+
+            if clip_beginning:
+                losses = losses[clip_beginning:]
+                lrs = lrs[clip_beginning:]
+
+            if clip_endding:
+                losses = losses[:clip_endding]
+                lrs = lrs[:clip_endding]
+
+        return losses, lrs
+
+    @classmethod
+    def plot_schedule_from_file(cls,
+                                directory,
+                                clip_beginning=None,
+                                clip_endding=None):
+        &quot;&quot;&quot;
+        Plots the schedule from the saved numpy arrays of the loss and learning
+        rate values in the specified directory.
+
+        # Arguments:
+            directory: String. Path to the directory where the serialized numpy
+                arrays of the loss and learning rates are saved.
+            clip_beginning: Integer or None. If positive integer, it will
+                remove the specified portion of the loss graph to remove the large
+                loss values in the beginning of the graph.
+            clip_endding: Integer or None. If negative integer, it will
+                remove the specified portion of the ending of the loss graph to
+                remove the sharp increase in the loss values at high learning rates.
+        &quot;&quot;&quot;
+        try:
+            import matplotlib.pyplot as plt
+            plt.style.use('seaborn-white')
+        except ImportError:
+            print(&quot;Matplotlib not found. Please use `pip install matplotlib` first.&quot;)
+            return
+
+        losses, lrs = cls.restore_schedule_from_dir(
+            directory,
+            clip_beginning=clip_beginning,
+            clip_endding=clip_endding)
+
+        if losses is None or lrs is None:
+            return
+        else:
+            plt.plot(lrs, losses)
+            plt.title('Learning rate vs Loss')
+            plt.xlabel('learning rate')
+            plt.ylabel('loss')
+            plt.show()
+
+    @property
+    def lrs(self):
+        return np.array(self.history['log_lrs'])
+
+    @property
+    def losses(self):
+        return np.array(self.history['running_loss_'])
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>
