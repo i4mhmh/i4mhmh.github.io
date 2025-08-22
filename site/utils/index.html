@@ -63,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -356,6 +361,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    utils
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -366,6 +384,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get_mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_mid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_mid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      返回值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_tatgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_tatgets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_tatgets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      返回值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -480,6 +583,82 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get_mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_mid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_mid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      返回值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_tatgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_tatgets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="get_tatgets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      返回值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -494,9 +673,100 @@
                   
 
 
-  <h1>utils</h1>
+<h1 id="_1">其他工具</h1>
+<h2 id="get_mid">get_mid</h2>
+<p><strong>mlscat.utils.get_mid(p, k, mask_scheme=None)</strong></p>
+<p>计算加密过程中某个字节的<strong>中间值</strong>（Intermediate Value），支持无掩码和布尔掩码（Boolean Masking）两种模式，常用于侧信道分析中的模板构建或攻击阶段标签生成。</p>
+<p>该函数模拟 AES 加密中 <code>SBox[plaintext ^ key]</code> 操作，并可扩展支持掩码防护下的中间值计算。</p>
+<h3 id="_2">参数说明</h3>
+<ul>
+<li><strong><code>p</code></strong> (<code>int</code>)
+     明文字节（8 位，范围 <code>0x00</code> ~ <code>0xFF</code>）。</li>
+<li><strong><code>k</code></strong> (<code>int</code>)
+     密钥猜测字节（8 位，范围 <code>0x00</code> ~ <code>0xFF</code>）。</li>
+<li><strong><code>mask</code></strong> (<code>int</code>, 可选, 默认: <code>-1</code>)
+     掩码值：<ul>
+<li>若为 <code>-1</code>：表示<strong>无掩码模式</strong>，仅计算 <code>SBox[p ^ k]</code></li>
+<li>若为其他值（如 <code>0x5A</code>）：表示使用的掩码字节，需配合 <code>mask_scheme</code> 使用</li>
+</ul>
+</li>
+<li><strong><code>mask_scheme</code></strong> (<code>str</code>, 可选, 默认: <code>None</code>)
+     掩码方案类型：<ul>
+<li><code>None</code> 或未指定：使用无掩码路径</li>
+<li><code>'bool'</code>：启用<strong>布尔掩码</strong>（Boolean Masking），返回 <code>SBox[p ^ k] ^ mask</code></li>
+<li>其他值：当前未实现，忽略</li>
+</ul>
+</li>
+</ul>
+<h3 id="_3">返回值</h3>
+<ul>
+<li>
+<p><code>int</code></p>
+<p>计算得到的中间值字节，范围 0x00~0xFF，具体如下：</p>
+<ul>
+<li>无掩码时：<code>AES_Sbox[p ^ k]</code></li>
+<li>布尔掩码时：<code>AES_Sbox[p ^ k] ^ mask</code></li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">from mlscat.utils import get_mid
 
+# 无掩码情况
+p, k = 0x32, 0x2B
+mid_unmasked = get_mid(p, k)
 
+# 布尔掩码情况
+mask = 0x5A
+mid_masked = get_mid(p, k, mask=mask, mask_scheme='bool')
+</code></pre>
+<h2 id="get_tatgets">get_tatgets</h2>
+<p><strong>mlscat.utils.get_targets(plaintexts, mask=-1)</strong></p>
+<p>生成<strong>中间值标签矩阵</strong>（Targets Matrix），用于侧信道分析中的模板构建、CPA、DPA 或机器学习攻击。</p>
+<p>该函数为每条明文和每个可能的密钥字节（0–255）计算对应的中间值（如 <code>SBox[plaintext ^ key]</code>），输出形状为 <code>(N, 256)</code> 的二维数组，其中每一行表示该迹在 256 个密钥猜测下的中间值类别。</p>
+<p>支持无掩码和<strong>布尔掩码</strong>（Boolean Masking）两种模式。</p>
+<h3 id="_4">参数说明</h3>
+<ul>
+<li><strong><code>plaintexts</code></strong> (<code>numpy.ndarray</code>, 形状: <code>(N, 1)</code> 或 <code>(N,)</code>)
+     明文数据数组，包含 <code>N</code> 条明文。<ul>
+<li>每个元素为一个字节（<code>0x00</code> ~ <code>0xFF</code>）</li>
+<li>示例：<code>plaintexts[i][0]</code> 表示第 <code>i</code> 条迹的明文字节</li>
+</ul>
+</li>
+<li><strong><code>mask</code></strong> (<code>int</code> 或 <code>numpy.ndarray</code>, 可选, 默认: <code>-1</code>)
+     掩码控制参数：<ul>
+<li>若 <code>mask == -1</code> 或为整数：表示<strong>无掩码模式</strong>，仅计算 <code>SBox[plaintext ^ key]</code></li>
+<li>若 <code>mask</code> 是长度为 <code>N</code> 的一维数组（如 <code>np.ndarray</code>, shape: <code>(N,)</code>）：表示每条迹使用的<strong>布尔掩码值</strong>，返回 <code>SBox[plaintext ^ key] ^ mask[i]</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="_5">返回值</h3>
+<ul>
+<li>
+<p><strong><code>targets</code></strong> (<code>numpy.ndarray</code>, 形状: <code>(N, 256)</code>, 类型: <code>int64</code>)
+     中间值标签矩阵，用于后续攻击：</p>
+<ul>
+<li><code>targets[i][k]</code> 表示在第 <code>i</code> 条能量迹、密钥猜测为 <code>k</code> 时，S 盒输出的中间值（或其掩码后值）</li>
+<li>可作为 <code>TemplateAttack</code>、<code>CPA</code> 等算法的输入标签</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">import numpy as np
+from mlscat.utils import get_targets
+
+# 假设已有明文数据
+plaintexts = np.array([[0x32], [0x45], [0x98], [0x12]]) 
+
+# 情况1：无掩码
+targets_unmasked = get_targets(plaintexts)
+print(&quot;Unmasked targets shape:&quot;, targets_unmasked.shape)  
+print(&quot;First row (key=0~5):&quot;, targets_unmasked[0][:6])   
+
+# 情况2：带布尔掩码（每条能量迹一个掩码）
+masks = np.array([0x5A, 0x3F, 0x11, 0x7E])  
+targets_masked = get_targets(plaintexts, mask=masks)
+print(&quot;Masked targets shape:&quot;, targets_masked.shape)     
+print(&quot;Masked first row:&quot;, targets_masked[0][:6])        
+</code></pre>
 
 
 

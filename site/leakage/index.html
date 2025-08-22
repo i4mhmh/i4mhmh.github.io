@@ -63,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -293,6 +298,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Leakage
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -303,6 +321,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hw-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      HW function
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lsb-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      lsb function !暂未实现
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -480,6 +535,34 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hw-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      HW function
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lsb-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      lsb function !暂未实现
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -494,9 +577,28 @@
                   
 
 
-  <h1>Leakage</h1>
-
-
+<h1 id="_1">泄露模型</h1>
+<p>通常，泄露模型的选择往往会极大程度上影响后续攻击的结果，具体来讲，当泄露模型对目标中间值信息 泄露特征刻画精度较高时，由刻画误差带来的噪声水平较低，一定程度上能减少攻击人员成功恢复密钥需要的能量迹数目。</p>
+<blockquote>
+<p>为了统一代码风格，所有涉及转换的方法的输入均以数组级进行操作</p>
+</blockquote>
+<h2 id="hw-function">HW function</h2>
+<pre><code class="language-python">cat.leakage.hw(mid: list[int]) -&gt; list[int]
+</code></pre>
+<p>返回输入中间值对应的汉明重量.</p>
+<p><strong>参数</strong></p>
+<ul>
+<li>mid: 输入的十进制中间值数组</li>
+</ul>
+<p><strong>Example</strong></p>
+<pre><code class="language-python">&gt;&gt;&gt; result = cat.leakage.hw([191, 221, 13, 16])
+&gt;&gt;&gt; result
+[7, 6, 3, 1]
+</code></pre>
+<h2 id="lsb-function">lsb function !暂未实现</h2>
+<pre><code class="language-python">cat.leakage.lsb(mid: list[int]) -&gt; list[int]
+</code></pre>
+<p>返回中间值的最低位</p>
 
 
 
