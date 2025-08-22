@@ -63,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -335,6 +340,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Security
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -345,6 +363,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#desynchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desynchronization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Desynchronization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      返回值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shuffling" class="md-nav__link">
+    <span class="md-ellipsis">
+      shuffling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="shuffling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      返回值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -480,6 +583,82 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#desynchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desynchronization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Desynchronization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      返回值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shuffling" class="md-nav__link">
+    <span class="md-ellipsis">
+      shuffling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="shuffling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      返回值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -494,9 +673,101 @@
                   
 
 
-  <h1>Security</h1>
+<h1 id="_1">防护措施</h1>
+<h2 id="desynchronization">Desynchronization</h2>
+<p><strong>mlscat.security.desynchronization(traces, window)</strong></p>
+<p>对功率迹数据施加<strong>随机去同步化</strong>（Random Desynchronization），用于模拟或增强对抗实际环境中因时间抖动、防护机制（如随机延迟）引起的信号偏移。</p>
+<p>该函数为每条迹引入一个在 <code>[0, window]</code> 范围内的随机延迟，在时间轴上向右移动信号，并使用<strong>零填充</strong>（zero-padding）处理移位后空出的部分。</p>
+<h3 id="_2">参数说明</h3>
+<ul>
+<li>
+<p><strong><code>traces</code></strong> (<code>numpy.ndarray</code>, 形状: <code>(m, n)</code>)
+     原始二维功率迹数组，其中：</p>
+<ul>
+<li><code>m</code>：迹的数量</li>
+<li><code>n</code>：每条迹的采样点数</li>
+</ul>
+<p>示例：<code>traces[i]</code> 表示第 <code>i</code> 条功率迹。</p>
+</li>
+<li>
+<p><strong><code>window</code></strong> (<code>int</code>)
+     去同步化的最大延迟范围（以采样点为单位）。每条迹将被随机延迟 <code>0</code> 到 <code>window</code> 个点（含）。</p>
+<ul>
+<li>若 <code>window = 0</code>：无延迟，返回原始数据。</li>
+<li>推荐值：根据采样率和系统时钟波动估计（如 1–10 个点）。</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="_3">返回值</h3>
+<ul>
+<li>
+<p><strong><code>delay_traces</code></strong> (<code>numpy.ndarray</code>, 形状: <code>(m, n)</code>)
+     经过去同步化处理后的迹数组。每条迹向右移动 <code>random_num ∈ [0, window]</code> 个点，左侧补 <code>random_num</code> 个 <code>0</code>。</p>
+<blockquote>
+<p>⚠️ <strong>注意</strong>：由于使用<strong>零填充</strong>，移位后迹的起始部分会引入 <code>0</code> 值，暂时不知道如何优化</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-python">import numpy as np
+from mlscat.security import desynchronization
 
+# 创建模拟迹数据 (5 条迹，每条 100 个采样点)
+original_traces = np.array([
+    np.sin(np.linspace(0, 4*np.pi, 100)) + 0.1*np.random.randn(100) 
+    for _ in range(5)
+])  # shape: (5, 100)
 
+# 施加去同步化，最大延迟为 5 个采样点
+desync_traces = desynchronization(traces=original_traces, window=5)
+</code></pre>
+<h2 id="shuffling">shuffling</h2>
+<p><strong>mlscat.preprocessing.shuffling(traces, times)</strong></p>
+<p>对每条能量迹进行<strong>随机点交换</strong>（Random Point Swapping），模拟硬件或软件中实现的“<strong>随机重排防护</strong>”（Random Instruction Shuffling）机制。</p>
+<p>该函数在每条迹内部随机选择两个采样点并交换其值，重复 <code>times</code> 次，从而扰乱功率迹的时间顺序，增加侧信道攻击难度</p>
+<h3 id="_4">参数说明</h3>
+<ul>
+<li>
+<p><strong><code>traces</code></strong> (<code>numpy.ndarray</code>, 形状: <code>(m, n)</code> 或 <code>(n,)</code>)
+     原始能量迹数组：</p>
+<ul>
+<li>二维：<code>(m, n)</code> — <code>m</code> 条能量迹，每条 <code>n</code> 个采样点</li>
+<li>一维：<code>(n,)</code> — 单条能量迹</li>
+</ul>
+<p>示例：<code>traces[i][t]</code> 表示第 <code>i</code> 条能量迹在时间点 <code>t</code> 的功耗值。</p>
+</li>
+<li>
+<p><strong><code>times</code></strong> (<code>int</code>)
+     每条能量迹执行随机交换的次数。</p>
+<ul>
+<li><code>times = 0</code>：无交换，返回原始数据</li>
+<li><code>times</code> 越大，重排程度越高，时间结构破坏越严重</li>
+<li>推荐值：<code>10 ~ 100</code>（根据能量迹长度调整）</li>
+</ul>
+<blockquote>
+<p>💡 提示：通常 <code>times</code> 与迹长度 <code>n</code> 成正比（如 <code>times = n // 10</code>）</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h3 id="_5">返回值</h3>
+<ul>
+<li><strong><code>shuffled_traces</code></strong> (<code>numpy.ndarray</code>, 形状与输入 <code>traces</code> 相同)
+    经过 <code>times</code> 次随机交换后的功率迹数据。
+    每条迹独立进行重排，能量迹之间不交叉。</li>
+</ul>
+<pre><code class="language-python">import numpy as np
+from mlscat.preprocessing import shuffling
+
+# 创建模拟能量迹数据 (2 条迹，每条 200 个点)
+original_traces = np.array([
+    np.sin(0.1 * np.arange(200)) + 0.5 * np.random.rand(200),
+    np.cos(0.1 * np.arange(200)) + 0.3 * np.random.rand(200)
+])  # shape: (2, 200)
+
+# 应用随机重排：每条能量迹交换 30 次
+shuffled_traces = shuffling(traces=original_traces, times=30)
+</code></pre>
 
 
 

@@ -63,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -314,6 +319,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Metrics
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -324,6 +342,100 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#calc_ge_sr" class="md-nav__link">
+    <span class="md-ellipsis">
+      calc_ge_sr
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="calc_ge_sr">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      返回值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add_gaussian_noise" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_gaussian_noise
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="add_gaussian_noise">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      返回值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shuffling" class="md-nav__link">
+    <span class="md-ellipsis">
+      shuffling
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -480,6 +592,91 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#calc_ge_sr" class="md-nav__link">
+    <span class="md-ellipsis">
+      calc_ge_sr
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="calc_ge_sr">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      返回值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add_gaussian_noise" class="md-nav__link">
+    <span class="md-ellipsis">
+      add_gaussian_noise
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="add_gaussian_noise">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      返回值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shuffling" class="md-nav__link">
+    <span class="md-ellipsis">
+      shuffling
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -494,9 +691,145 @@
                   
 
 
-  <h1>Metrics</h1>
+<h1 id="_1">评估指标</h1>
+<h2 id="calc_ge_sr">calc_ge_sr</h2>
+<p><strong>mlscat.metrics.calc_ge_sr(predictions, targets, num_traces, key, times=1000, interval=1)</strong></p>
+<p>计算<strong>密钥恢复的成功率</strong>（Success Rate, SR）和<strong>平均排名</strong>（Guessing Entropy, GE 风格排名），用于评估侧信道攻击（如 CPA、DPA、模板攻击）的性能。</p>
+<p>该函数通过多次随机重采样攻击预测结果，统计在不同迹数下正确密钥的排名变化和成功恢复概率，生成平滑的评估曲线。</p>
+<hr />
+<pre><code class="language-python">def calc_ge_sr(
+    predictions: list,
+    targets: np.ndarray,
+    num_traces: int,
+    key: int,
+    times: int = 1000,
+    interval: int = 1
+) -&gt; tuple:
+</code></pre>
+<p>计算<strong>密钥恢复的成功率</strong>（Success Rate, SR）和<strong>平均排名</strong>（Guessing Entropy, GE 风格排名），用于评估侧信道攻击（如 CPA、DPA、模板攻击）的性能。</p>
+<p>该函数通过多次随机重采样攻击预测结果，统计在不同迹数下正确密钥的排名变化和成功恢复概率，生成平滑的评估曲线。</p>
+<h3 id="_2">参数说明</h3>
+<ul>
+<li>
+<p><strong><code>predictions</code></strong> (<code>list</code> of <code>dict</code> or <code>list</code> of <code>np.ndarray</code>)
+     攻击过程中每条迹的预测概率输出列表，长度为 <code>N</code>（迹总数）。
+     每个元素应为：</p>
+<ul>
+<li>字典：<code>{中间值类别 -&gt; 概率}</code>，或</li>
+<li>数组：长度为 256 的概率向量（索引为密钥猜测）</li>
+</ul>
+<p>示例：<code>predictions[i][k]</code> 表示第 <code>i</code> 条迹在密钥猜测 <code>k</code> 下的似然或相关值。</p>
+</li>
+<li>
+<p><strong><code>targets</code></strong> (<code>numpy.ndarray</code>, 形状: <code>(N, 256)</code>)
+     预先计算的每条迹在每个密钥猜测下的<strong>中间值类别标签</strong>。
+     用于将 <code>predictions[i]</code> 映射到对应密钥猜测的概率。
+     例如：<code>targets[i][k] = SBox(plaintext[i][byte] ^ k)</code></p>
+</li>
+<li>
+<p><strong><code>num_traces</code></strong> (<code>int</code>)
+     每次实验中用于攻击的最大迹数。结果将按 <code>interval</code> 间隔分段统计。</p>
+</li>
+<li>
+<p><strong><code>key</code></strong> (<code>int</code>)
+     实际正确的密钥字节值（0–255），用于计算其在候选列表中的排名和是否成功恢复。</p>
+</li>
+<li>
+<p><strong><code>times</code></strong> (<code>int</code>, 可选, 默认: <code>1000</code>)
+     重复实验的次数（蒙特卡洛模拟），用于平均随机性影响，提高评估稳定性。</p>
+</li>
+<li>
+<p><strong><code>interval</code></strong> (<code>int</code>, 可选, 默认: <code>1</code>)
+     统计结果的时间间隔。例如 <code>interval=5</code> 表示每 5 条迹报告一次成功率和排名。</p>
+<p>输出点数为：<code>n_i = num_traces // interval</code></p>
+</li>
+</ul>
+<hr />
+<h3 id="_3">返回值</h3>
+<p>返回一个包含两个数组的元组：</p>
+<ul>
+<li><strong><code>success_rate</code></strong> (<code>numpy.ndarray</code>, 形状: <code>(n_i,)</code>)
+     每个间隔点上的<strong>平均成功率</strong>。
+     <code>success_rate[i]</code> 表示使用前 <code>(i+1)*interval</code> 条迹时，正确密钥排在第一名的概率（即 <code>rank &lt; 1</code>，因为索引从 0 开始）。</li>
+<li><strong><code>all_keys_rank</code></strong> (<code>numpy.ndarray</code>, 形状: <code>(n_i,)</code>)
+     每个间隔点上的<strong>平均密钥排名</strong>（Guessing Entropy 风格）。
+     <code>all_keys_rank[i]</code> 表示使用前 <code>(i+1)*interval</code> 条迹后，正确密钥的平均排名（越低越好）。</li>
+</ul>
+<blockquote>
+<p>⚠️ 注意：返回值已除以 <code>times</code>，即为<strong>平均值</strong>。</p>
+<p>食用方法</p>
+</blockquote>
+<pre><code class="language-python">sr, rank = calc_ge_sr(
+    predictions=predictions,
+    targets=targets,    // you know how to calculate this array, right?
+    num_traces=100,
+    key=true_key,
+    times=100,
+    interval=5
+)
+</code></pre>
+<h2 id="add_gaussian_noise">add_gaussian_noise</h2>
+<p><strong>mlscat.preprocessing.add_gaussian_noise(traces, std, mean=0)</strong></p>
+<p>为能量迹数据添加<strong>高斯白噪声</strong>（Additive White Gaussian Noise, AWGN），用于：
+- 模拟真实测量环境中的噪声干扰
+- 增强训练数据的鲁棒性（数据增强）
+- 评估密码设备或攻击算法在低信噪比下的表现</p>
+<p>该函数对每条迹独立添加均值为 <code>mean</code>、标准差为 <code>std</code> 的正态分布噪声。</p>
+<h3 id="_4">参数说明</h3>
+<ul>
+<li>
+<p><strong><code>traces</code></strong> (<code>numpy.ndarray</code>, 形状: <code>(m, n)</code> 或 <code>(m,)</code>)
+     原始功率迹数组，支持：</p>
+<ul>
+<li>二维：<code>(m, n)</code> — <code>m</code> 条迹，每条 <code>n</code> 个采样点</li>
+<li>一维：<code>(n,)</code> — 单条迹</li>
+</ul>
+<p>数据类型不限，输出将保留原始语义。</p>
+</li>
+<li>
+<p><strong><code>std</code></strong> (<code>float</code>)
+     噪声的<strong>标准差</strong>（Standard Deviation），控制噪声强度或“噪声水平”。</p>
+<ul>
+<li><code>std = 0</code>：无噪声，返回原始数据</li>
+<li><code>std</code> 越大，添加的噪声越强，信噪比（SNR）越低</li>
+<li>示例建议值：<ul>
+<li>轻度噪声：<code>std = 0.1 * np.std(traces)</code></li>
+<li>中度噪声：<code>std = 0.3 * np.std(traces)</code></li>
+<li>强噪声：<code>std = 0.5 * np.std(traces)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>mean</code></strong> (<code>float</code>, 可选, 默认: <code>0</code>)
+     噪声的均值。通常设为 <code>0</code> 表示对称扰动。若设备存在系统性偏移，可设为非零值。</p>
+</li>
+</ul>
+<hr />
+<h3 id="_5">返回值</h3>
+<ul>
+<li><strong><code>noise_traces</code></strong> (<code>numpy.ndarray</code>, 形状与输入 <code>traces</code> 相同)</li>
+</ul>
+<pre><code class="language-python">import numpy as np
+from mlscat.security import add_gaussian_noise
 
+# 创建模拟迹数据 (3 条迹，每条 1000 个点)
+original_traces = np.array([
+    2 * np.sin(2 * np.pi * 0.02 * np.arange(1000)) + 
+    0.5 * np.sin(2 * np.pi * 0.05 * np.arange(1000))
+    for _ in range(3)
+])  # shape: (3, 1000)
 
+# 添加高斯噪声：均值0，标准差0.3
+noisy_traces = add_gaussian_noise(traces=original_traces, std=0.3, mean=0)
+</code></pre>
+<h2 id="shuffling">shuffling</h2>
+<p><strong>mlscat.preprocessing.shuffling(traces, times)</strong></p>
+<p>对每条功率迹进行<strong>随机点交换</strong>（Random Point Swapping），模拟硬件或软件中实现的“<strong>随机重排防护</strong>”（Random Instruction Shuffling）机制。</p>
+<p>该函数在每条迹内部随机选择两个采样点并交换其值，重复 <code>times</code> 次，从而扰乱功率迹的时间顺序，增加侧信道攻击难度。</p>
+<blockquote>
+<p>⚠️ 注意：此方法仅用于<strong>模拟</strong>软件/指令级随机重排对能量迹的影响，不改变原始数据语义，但会破坏时间相关性。</p>
+</blockquote>
 
 
 

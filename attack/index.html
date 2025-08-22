@@ -296,11 +296,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mlscatattackscpa" class="md-nav__link">
+  <a href="#cpa" class="md-nav__link">
     <span class="md-ellipsis">
-      mlscat.attacks.cpa
+      CPA
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      DPA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templateattack" class="md-nav__link">
+    <span class="md-ellipsis">
+      TemplateAttack
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcc" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PCC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      返回值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -536,11 +587,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mlscatattackscpa" class="md-nav__link">
+  <a href="#cpa" class="md-nav__link">
     <span class="md-ellipsis">
-      mlscat.attacks.cpa
+      CPA
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      DPA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templateattack" class="md-nav__link">
+    <span class="md-ellipsis">
+      TemplateAttack
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcc" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PCC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      返回值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -563,7 +665,174 @@
 <blockquote>
 <p>一些核心攻击代码集成</p>
 </blockquote>
-<h2 id="mlscatattackscpa">mlscat.attacks.cpa</h2>
+<h3 id="cpa">CPA</h3>
+<p><strong><code>cat.attacks.cpa(byte_idx, plaintexts, traces, mask_scheme=None, mask=-1)-&gt;np.ndarray</code></strong></p>
+<p>执行相关性能量分析（Correlation Power Analysis, CPA），用于从加密设备的能量迹中恢复指定位置的密钥字节。</p>
+<p><strong>参数</strong></p>
+<ul>
+<li>
+<p><strong><code>byte_idx</code></strong> (<code>int</code>)<br />
+  要攻击的密钥字节索引（例如：0–15 对于 AES-128）。</p>
+</li>
+<li>
+<p><strong><code>plaintexts</code></strong> (<code>numpy.ndarray</code>)<br />
+  输入明文数据，形状为 <code>(N, L)</code> 或 <code>(N,)</code>，其中 <code>N</code> 是能量迹的数量，<code>L</code> 是每条明文的字节数。</p>
+</li>
+<li>
+<p><strong><code>traces</code></strong> (<code>numpy.ndarray</code>)<br />
+  能量迹数据，二维数组，形状为 <code>(N, T)</code>，<code>N</code> 是能量迹的数量，<code>T</code> 为每条能量迹的时间样本点个数。必须与 <code>plaintexts</code> 的数量一致。</p>
+</li>
+<li>
+<p><strong><code>mask_scheme</code></strong> (<code>str</code>, 可选, 默认: <code>None</code>)<br />
+  掩码防护方案类型（目前仅有<code>bool</code>可选）。  </p>
+</li>
+<li>
+<p><strong><code>mask</code></strong> (<code>int</code>, <code>list</code>, 或 <code>numpy.ndarray</code>, 可选, 默认: <code>-1</code>)<br />
+  掩码值或掩码序列，形状为 <code>(N,)</code>。  </p>
+</li>
+</ul>
+<p><strong>返回值</strong></p>
+<ul>
+<li><strong><code>np.ndarray</code></strong><br />
+  推测出的最佳密钥值，返回形式为 <code>np.array([best_key])</code>，其中 <code>best_key</code> 是最可能的密钥字节（0–255）。</li>
+</ul>
+<p><strong>示例</strong></p>
+<pre><code class="language-python">import mlscat
+import numpy as np
+
+# 示例数据
+plaintexts = np.array([[0x32, 0x43, 0xf1, 0xa4], 
+                       [0x32, 0x43, 0xf1, 0xa5], 
+                       [0x32, 0x43, 0xf1, 0xa6]])
+traces = np.random.rand(3, 1000)
+
+# 执行 CPA 攻击
+guess_key = mlscat.attacks.cpa(byte_idx=3, plaintexts=plaintexts, traces=traces)
+
+print(&quot;推测密钥字节:&quot;, guess_key)  # 输出: 推测密钥字节
+</code></pre>
+<h2 id="dpa">DPA</h2>
+<p><strong><code>cat.attacks.dpa(traces, plaintexts, threshold, target_byte, target_point, leakage_function)</code></strong> </p>
+<p>执行<strong>差分能量分析</strong>（Differential Power Analysis, DPA），用于从加密设备的能量迹中恢复 AES-128 的密钥字节。 该函数基于指定的泄漏模型（如汉明重量）将能量迹分为两组，计算每组在目标采样点上的均值差异，从而推测最可能的密钥候选。 </p>
+<blockquote>
+<p>⚠️ <strong>注意</strong>：当前实现专为 <strong>AES-128</strong> 设计。若用于 AES-192、AES-256 或其他算法，需手动修改中间值计算逻辑。 </p>
+</blockquote>
+<p><strong>参数</strong> </p>
+<ul>
+<li>
+<p><strong><code>traces</code></strong> (<code>numpy.ndarray</code>)    </p>
+<p>能量迹数据，形状为 <code>(N, T)</code>，其中 <code>N</code> 是迹的数量，<code>T</code> 是每条迹的采样点数。</p>
+</li>
+<li>
+<p><strong><code>plaintexts</code></strong> (<code>numpy.ndarray</code>) </p>
+<p>对应的明文数据，形状为 <code>(N, 16)</code>（适用于 AES-128）。每条明文应为 16 字节。</p>
+</li>
+<li>
+<p><strong><code>threshold</code></strong> (<code>int</code>)<br />
+  用于分组的阈值。根据泄漏函数的输出值与该阈值比较，将迹划分为两组：</p>
+</li>
+<li>小于阈值 → 组1</li>
+<li>大于等于阈值 → 组2</li>
+<li><strong><code>target_byte</code></strong> (<code>int</code>)<br />
+  要攻击的密钥字节索引（0–15），用于计算中间值 <code>SBox[plaintext[target_byte] ^ key_guess]</code>。</li>
+<li><strong><code>target_point</code></strong> (<code>int</code>)<br />
+  在每条能量迹中要分析的<strong>采样点索引</strong>（例如：810）。攻击基于该点的能量值进行分组均值分析。</li>
+<li><strong><code>leakage_function</code></strong> (<code>str</code>)<br />
+  使用的泄漏模型：</li>
+<li><code>'hw'</code>：使用<strong>汉明重量</strong>（Hamming Weight）作为分类依据</li>
+<li>其他值：直接使用 S 盒输出值（不推荐，通常 <code>'hw'</code> 更有效）</li>
+</ul>
+<p><strong>返回值</strong></p>
+<ul>
+<li><strong><code>candidate_key</code></strong> (<code>int</code>)<br />
+  推测出的最可能密钥字节（0–255），对应最大均值差的密钥猜测。</li>
+<li><strong><code>mean_diffs</code></strong> (<code>numpy.ndarray</code>, 形状: <code>(256,)</code>)<br />
+  所有 256 个密钥猜测对应的两组迹在 <code>target_point</code> 处的均值差绝对值数组，可用于进一步分析或绘图。</li>
+</ul>
+<p><strong>示例</strong></p>
+<pre><code class="language-python">import mlscat
+import numpy as np
+
+# 假设已采集数据
+traces = np.load('traces.npy')       # shape: (2000, 15000)
+plaintexts = np.load('plain.npy')    # shape: (2000, 16)
+
+# 执行 DPA 攻击：攻击第 0 字节，在采样点 810 分析，使用汉明重量模型，阈值为 4
+candidate, diffs = mlscat.attacks.dpa(
+    traces=traces,
+    plaintexts=plaintexts,
+    threshold=4,
+    target_byte=0,
+    target_point=810,
+    leakage_function='hw'
+)
+
+print(&quot;推测密钥字节:&quot;, candidate)  
+</code></pre>
+<h2 id="templateattack">TemplateAttack</h2>
+<blockquote>
+<p><strong>模板攻击</strong>（Template Attack, TA）—— 一种高阶侧信道分析方法，基于建模阶段的统计特征对攻击阶段数据进行密钥推测。</p>
+</blockquote>
+<p><code>TemplateAttack</code> 类实现了经典的<strong>基于多元高斯分布的模板攻击</strong>，分为两个阶段：</p>
+<ol>
+<li><strong>模板构建阶段</strong>（<code>profiling</code>）：从能量迹数据中学习每个中间值类别的均值与协方差矩阵。</li>
+<li><strong>攻击阶段</strong>（<code>attack</code>）：使用模板对未知密钥的攻击数据进行概率推断，并计算<strong>平均排名</strong>（Mean Rank）以评估密钥恢复能力。</li>
+</ol>
+<hr />
+<pre><code class="language-python">class TemplateAttack:
+    def __init__(self, X_profiling, Y_profiling, X_attack) -&gt; None:
+        &quot;&quot;&quot;
+        初始化模板攻击对象。
+
+        参数:
+            X_profiling (np.ndarray): 配置阶段的能量迹，形状为 (N_prof, T)。
+            Y_profiling (np.ndarray): 配置阶段的中间值标签，形状为 (N_prof,)。
+            X_attack (np.ndarray): 攻击阶段的能量迹，形状为 (N_attack, T)。
+
+</code></pre>
+<h2 id="pcc">PCC</h2>
+<p>计算<strong>皮尔逊相关系数</strong>（Pearson Correlation Coefficient）向量，用于侧信道分析中衡量中间值猜测与能量迹各采样点之间的线性相关性。</p>
+<p>该函数对每一条迹的每个采样点分别计算与给定目标中间值序列的相关性，返回绝对值形式的相关系数数组，便于后续分析（如 CPA 攻击中寻找最大相关点）。</p>
+<h3 id="_1">参数</h3>
+<ul>
+<li><strong><code>targets</code></strong> (<code>numpy.ndarray</code>, 形状: <code>(N,)</code>)
+     中间值模型输出序列（例如：<code>SBox[plaintext[i] ^ k_guess]</code>），长度为 <code>N</code>，对应 <code>N</code> 条能量迹。</li>
+<li><strong><code>traces</code></strong> (<code>numpy.ndarray</code>, 形状: <code>(N, T)</code>))
+     能量迹数据，其中：<ul>
+<li><code>N</code>：迹的数量（必须与 <code>targets</code> 长度一致）</li>
+<li><code>T</code>：每条迹的采样点数量</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="_2">返回值</h3>
+<ul>
+<li>
+<p><strong><code>pearson_list</code></strong> (<code>numpy.ndarray</code>, 形状: <code>(T,)</code>)
+     每个采样点与 <code>targets</code> 之间的皮尔逊相关系数的<strong>绝对值</strong>数组。
+     值域范围：<code>[0, 1]</code></p>
+<ul>
+<li>接近 <code>1</code>：强相关</li>
+<li>接近 <code>0</code>：弱相关或无相关</li>
+</ul>
+<p>用于定位最可能泄露密钥信息的采样点。</p>
+</li>
+</ul>
+<pre><code class="language-python">import numpy as np
+from mlscat.utils import pcc
+
+# 假设已有数据
+targets = np.array([123, 45, 89, 111, 67])  # 5 条迹的中间值
+traces = np.random.rand(5, 1000)            # 5 条迹，每条 1000 个采样点
+
+# 计算相关系数
+correlations = pcc(targets, traces)
+
+# 找到最大相关点
+max_corr_point = np.argmax(correlations)
+print(&quot;最相关采样点索引:&quot;, max_corr_point)
+print(&quot;相关系数:&quot;, correlations[max_corr_point])
+</code></pre>
 
 
 
